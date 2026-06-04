@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bài 1: Thao tác cơ bản với tệp tin và thư mục - Digital Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#404942",
+                    "on-primary-container": "#8ed4ab",
+                    "on-error": "#ffffff",
+                    "background": "#f4fafd",
+                    "primary-fixed": "#abf2c8",
+                    "surface-container-lowest": "#ffffff",
+                    "primary": "#00442a",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed": "#ffdea4",
+                    "surface-tint": "#246a49",
+                    "on-tertiary-container": "#f6bb3c",
+                    "on-secondary-fixed-variant": "#414846",
+                    "on-tertiary-fixed-variant": "#5d4200",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed": "#161d1b",
+                    "surface": "#f4fafd",
+                    "inverse-primary": "#8fd5ad",
+                    "on-primary-fixed-variant": "#005233",
+                    "on-background": "#161d1f",
+                    "secondary-fixed-dim": "#c1c8c5",
+                    "on-error-container": "#93000a",
+                    "surface-container-highest": "#dde4e6",
+                    "error": "#ba1a1a",
+                    "secondary-container": "#dae1de",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed": "#dde4e1",
+                    "outline": "#707972",
+                    "surface-container-low": "#eef5f7",
+                    "surface-variant": "#dde4e6",
+                    "primary-fixed-dim": "#8fd5ad",
+                    "tertiary": "#4e3700",
+                    "secondary": "#59605e",
+                    "on-secondary-container": "#5d6462",
+                    "tertiary-fixed-dim": "#f8bd3e",
+                    "surface-container": "#e8eff1",
+                    "tertiary-container": "#6b4c00",
+                    "surface-container-high": "#e2e9ec",
+                    "on-primary-fixed": "#002112",
+                    "surface-bright": "#f4fafd",
+                    "inverse-surface": "#2b3234",
+                    "on-secondary": "#ffffff",
+                    "outline-variant": "#bfc9c0",
+                    "on-surface": "#161d1f",
+                    "inverse-on-surface": "#ebf2f4",
+                    "on-tertiary-fixed": "#261900",
+                    "surface-dim": "#d4dbdd",
+                    "primary-container": "#135d3d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "container-max": "1200px",
+                    "stack-md": "16px",
+                    "section-gap": "80px",
+                    "stack-sm": "8px",
+                    "gutter": "24px",
+                    "stack-lg": "32px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Be Vietnam Pro"],
+                    "headline-lg-mobile": ["Be Vietnam Pro"],
+                    "body-md": ["Be Vietnam Pro"],
+                    "headline-xl": ["Be Vietnam Pro"],
+                    "headline-md": ["Be Vietnam Pro"],
+                    "headline-sm": ["Be Vietnam Pro"],
+                    "headline-lg": ["Be Vietnam Pro"],
+                    "label-md": ["Be Vietnam Pro"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-xl": ["40px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .step-line::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 40px;
+            bottom: -20px;
+            width: 2px;
+            background-color: #bfc9c0;
+            transform: translateX(-50%);
+        }
+        .step-container:last-child .step-line::after {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopAppBar -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-background border-b border-outline-variant h-16">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto h-full">
+<div class="font-headline-md text-headline-md font-bold text-primary">Digital Portfolio</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Home</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md" href="#">Exercises</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">About</a>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md text-label-md scale-95 active:scale-90 transition-transform">Contact</button>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- SideNavBar (Desktop Only) -->
+<aside class="fixed left-0 top-16 bottom-0 w-64 bg-surface-container-low border-r border-outline-variant hidden lg:block overflow-y-auto py-6">
+<div class="px-6 mb-8">
+<h2 class="font-headline-sm text-headline-sm font-bold text-primary">Exercises</h2>
+<p class="font-label-md text-label-md text-on-surface-variant">Module Navigation</p>
+</div>
+<nav class="space-y-1">
+<a class="bg-primary-container text-on-primary-container rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors" href="#">
+<span class="material-symbols-outlined">folder</span>
+<span class="font-label-md text-label-md">Bài 1: File Ops</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label-md text-label-md">Bài 2: Research</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors" href="#">
+<span class="material-symbols-outlined">psychology</span>
+<span class="font-label-md text-label-md">Bài 3: Prompting</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-label-md text-label-md">Bài 4: Collaboration</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-label-md text-label-md">Bài 5: Generative AI</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors" href="#">
+<span class="material-symbols-outlined">gavel</span>
+<span class="font-label-md text-label-md">Bài 6: Ethics</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Canvas -->
+<main class="lg:ml-64 pt-16 min-h-screen">
+<div class="max-w-4xl mx-auto px-margin-mobile md:px-gutter py-10">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 mb-8 text-on-surface-variant">
+<a class="hover:text-primary font-label-md text-label-md" href="#">Home</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-primary font-label-md text-label-md" href="#">Exercises</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-primary font-bold font-label-md text-label-md">Bài 1</span>
+</nav>
+<!-- Header Section -->
+<header class="mb-12">
+<h1 class="font-headline-xl text-headline-xl text-primary mb-4">Bài 1: Thao tác cơ bản với tệp tin và thư mục</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                    Học cách tổ chức không gian làm việc số khoa học thông qua việc thiết lập cấu trúc thư mục tối ưu và quy tắc đặt tên tệp chuyên nghiệp.
+                </p>
+</header>
+<!-- Grid Content -->
+<div class="space-y-section-gap">
+<!-- Requirements / Intro Blockquote -->
+<section class="bg-primary-container/10 border-l-4 border-primary p-6 rounded-r-lg">
+<span class="material-symbols-outlined text-primary mb-2">info</span>
+<blockquote class="font-body-md text-body-md text-on-surface-variant italic">
+                        "Mục tiêu của bài tập này là xây dựng một hệ thống lưu trữ bền vững, giúp việc truy xuất thông tin nhanh chóng và tránh nhầm lẫn phiên bản."
+                    </blockquote>
+</section>
+<!-- Detailed Content: Steps Pattern -->
+<section>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-8">Quy trình thực hiện</h2>
+<div class="space-y-12">
+<!-- Step 1 -->
+<div class="flex gap-6 step-container relative">
+<div class="relative z-10 step-line">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center font-bold text-primary font-headline-sm">1</div>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Thiết lập cấu trúc thư mục gốc</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Xây dựng hệ thống phân cấp 3 cấp độ: Module &gt; Task &gt; Assets để đảm bảo mọi tệp tin đều có vị trí logic.</p>
+<div class="bg-surface-container rounded-lg p-4 font-mono text-sm text-on-surface-variant border border-outline-variant">
+                                    Digital_Portfolio/ <br/>
+                                    ├── 01_Exercises/ <br/>
+                                    │   └── Bài_01_File_Ops/ <br/>
+                                    │       ├── Screenshots/ <br/>
+                                    │       └── Documentation/ <br/>
+                                    └── 02_Projects/
+                                </div>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex gap-6 step-container relative">
+<div class="relative z-10 step-line">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center font-bold text-primary font-headline-sm">2</div>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Quy tắc đặt tên tệp (Naming Convention)</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Sử dụng định dạng Snake Case kết hợp với Versioning để quản lý sự thay đổi của tài liệu.</p>
+<ul class="space-y-2">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] mt-1">check_circle</span>
+<span class="font-body-md text-body-md">Không sử dụng dấu tiếng Việt và khoảng trắng.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] mt-1">check_circle</span>
+<span class="font-body-md text-body-md">Sử dụng tiền tố ngày tháng (YYYYMMDD) cho các bản nháp quan trọng.</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Step 3 (Showcase) -->
+<div class="flex gap-6 step-container relative">
+<div class="relative z-10">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center font-bold text-primary font-headline-sm">3</div>
+</div>
+<div class="flex-1">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-4">Minh họa thực tế</h3>
+<div class="relative rounded-xl overflow-hidden border border-outline-variant group">
+<img alt="File structure screenshot" class="w-full h-auto object-cover aspect-video transition-transform duration-500 group-hover:scale-105" data-alt="A clean and professional computer screen screenshot showing an organized file explorer window. The folder structure follows a clear hierarchy with primary green accents on highlighted folders. The lighting is soft and natural, reflecting a focused academic or corporate workspace environment. The overall aesthetic is minimalist and high-tech, showcasing digital organization skills." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8kFdVzmalzzFYxMY5KY7oY340V2AJSl-hqHhp7i8Q5y8YvK7Bz1eyeOOv8WndIgpWdlZIEr6BfW9bG099DoRluVBPe8i8ZHwHKeePrH8-r7nH__u2BP2sgoeEE2tVQj_uvJsssT9kYrnVlc_sr4WvghoFCbIzyjGoMfHVQifrk5uqB25XWcIgjvkiMhq_naSgFLHZdUErli6HbSXVSPoYkBjeK0fgqQk-1h1MZxbonrhJRfL7lq2bE8KViGixIf40nlQwCsSs9eVF"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="bg-white/90 backdrop-blur px-4 py-2 rounded-full font-label-md text-label-md text-primary shadow-lg">Ảnh minh họa cấu trúc thư mục</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Navigation Actions -->
+<section class="flex flex-col sm:flex-row gap-4 justify-between items-center pt-8 border-t border-outline-variant">
+<button class="flex items-center gap-2 text-primary border border-primary px-6 py-2 rounded-lg font-label-md text-label-md hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+                        Quay lại danh sách
+                    </button>
+<button class="flex items-center gap-2 bg-primary text-on-primary px-8 py-2 rounded-lg font-label-md text-label-md hover:shadow-lg transition-all scale-100 active:scale-95">
+                        Xem Bài 2
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</section>
+</div>
+</div>
+<!-- Footer -->
+<footer class="w-full py-stack-lg px-margin-mobile md:px-gutter mt-section-gap bg-surface-container-highest border-t border-outline-variant">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="text-center md:text-left">
+<div class="font-headline-sm text-headline-sm font-bold text-on-background mb-2">Digital Portfolio</div>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 Digital Portfolio. Academic Reference: Intro to Digital Tech &amp; AI.</p>
+</div>
+<div class="flex gap-6">
+<a class="text-on-surface-variant hover:underline decoration-primary font-label-md text-label-md" href="#">Email</a>
+<a class="text-on-surface-variant hover:underline decoration-primary font-label-md text-label-md" href="#">LinkedIn</a>
+<a class="text-on-surface-variant hover:underline decoration-primary font-label-md text-label-md" href="#">GitHub</a>
+</div>
+</div>
+</footer>
+</main>
+<!-- Mobile Bottom Navigation (Hidden on Desktop) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-background border-t border-outline-variant flex justify-around items-center h-16 z-50">
+<a class="flex flex-col items-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-label-md">Home</span>
+</a>
+<a class="flex flex-col items-center text-primary font-bold" href="#">
+<span class="material-symbols-outlined">description</span>
+<span class="text-[10px] font-label-md">Exercises</span>
+</a>
+<a class="flex flex-col items-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-label-md">About</span>
+</a>
+</nav>
+<script>
+        // Simple scroll interaction for the header
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-sm');
+            } else {
+                nav.classList.remove('shadow-sm');
+            }
+        });
+    </script>
+</body></html>
