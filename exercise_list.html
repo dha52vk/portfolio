@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html class="light" lang="vi"><head>
 <meta charset="utf-8"/>
@@ -128,56 +128,54 @@
         }
     </style>
 </head>
-<body class="text-on-background">
-<!-- TopNavBar -->
-<header class="fixed top-0 left-0 right-0 z-50 bg-background dark:bg-background border-b border-outline-variant dark:border-on-surface-variant">
-<nav class="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto h-16">
-<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">
-                Digital Portfolio
-            </div>
-<div class="hidden md:flex gap-8 items-center">
-<a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors font-body-md text-body-md" href="index.html">Trang chủ</a>
-<a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-primary dark:border-primary-fixed pb-1 font-body-md text-body-md" href="exercise_list.html">Bài tập</a>
-<a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors font-body-md text-body-md" href="index.html#about">Giới thiệu</a>
-<button onclick="window.location.href='contact.html'" class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-md text-label-md scale-95 active:scale-90 transition-transform">
-                    Liên hệ
-                </button>
+<body class="text-on-background overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-background border-b border-outline-variant h-16">
+<nav class="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto h-full">
+<div class="font-headline-md text-headline-md font-bold text-primary cursor-pointer" onclick="window.location.href='index.html'">Digital Portfolio</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="index.html">Trang chủ</a>
+<a class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary pb-1 transition-colors" href="exercise_list.html">Bài tập</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="index.html#about">Giới thiệu</a>
+<button class="bg-primary text-on-primary px-6 py-2 rounded font-label-md text-label-md hover:opacity-90 active:scale-95 transition-all" onclick="window.location.href='contact.html'">Liên hệ</button>
 </div>
-<button class="md:hidden text-primary">
-<span class="material-symbols-outlined" data-icon="menu">menu</span>
+<!-- Mobile Toggle -->
+<button id="mobile-menu-btn" class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
 </button>
 </nav>
 </header>
-<div class="flex pt-16 min-h-screen">
-<!-- SideNavBar -->
-<aside class="fixed left-0 top-16 bottom-0 z-40 bg-surface-container-low dark:bg-surface-container-lowest h-full w-64 hidden lg:block border-r border-outline-variant">
-<div class="p-6">
-<h2 class="font-headline-sm text-headline-sm font-bold text-primary">Exercises</h2>
-<p class="text-on-surface-variant font-label-md text-label-md">Module Navigation</p>
+
+<!-- Side Navigation Bar -->
+<aside id="mobile-sidebar" class="fixed left-0 top-16 bottom-0 z-40 bg-surface-container-low h-full w-64 hidden lg:block border-r border-outline-variant overflow-y-auto">
+<div class="p-6 mb-4">
+<h2 class="font-headline-sm text-headline-sm font-bold text-primary">Danh sách bài tập</h2>
+<p class="font-label-md text-label-md text-on-surface-variant">Điều hướng</p>
 </div>
 <nav class="flex flex-col gap-1">
 <a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercises/exercise1.html">
-<span class="material-symbols-outlined" data-icon="folder">folder</span> Bài 1: File Ops
-                </a>
-<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="#">
-<span class="material-symbols-outlined" data-icon="search">search</span> Bài 2: Research
-                </a>
-<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="#">
-<span class="material-symbols-outlined" data-icon="psychology">psychology</span> Bài 3: Prompting
-                </a>
-<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="#">
-<span class="material-symbols-outlined" data-icon="groups">groups</span> Bài 4: Collaboration
-                </a>
-<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="#">
-<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span> Bài 5: Generative AI
-                </a>
-<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="#">
-<span class="material-symbols-outlined" data-icon="gavel">gavel</span> Bài 6: Ethics
-                </a>
+<span class="material-symbols-outlined" data-icon="folder">folder</span> Bài 1: Thao tác cơ bản với tệp tin và thư mục
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercises/exercise2.html">
+<span class="material-symbols-outlined" data-icon="search">search</span> Bài 2: Tìm kiếm và đánh giá thông tin học thuật
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercises/exercise3.html">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span> Bài 3: Kỹ năng viết Prompt trong học tập
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercises/exercise4.html">
+<span class="material-symbols-outlined" data-icon="groups">groups</span> Bài 4: Kỹ năng làm việc nhóm
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercises/exercise5.html">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span> Bài 5: Ứng dụng AI tạo sinh trong sáng tạo nội dung số
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercises/exercise6.html">
+<span class="material-symbols-outlined" data-icon="gavel">gavel</span> Bài 6: Phát triển kỹ năng sử dụng AI có trách nhiệm và đạo đức trong học thuật
+</a>
 </nav>
 </aside>
 <!-- Main Content -->
-<main class="flex-1 lg:ml-64 px-margin-mobile md:px-gutter py-stack-lg max-w-container-max mx-auto w-full">
+<main class="flex-1 lg:ml-64 pt-16 min-h-screen flex flex-col">
+<div class="max-w-[1200px] w-full mx-auto px-margin-mobile md:px-gutter py-stack-lg flex-1 flex flex-col min-w-0">
 <!-- Hero Header -->
 <section class="mb-section-gap">
 <div class="max-w-3xl">
@@ -211,7 +209,7 @@
 </div>
 </div>
 <!-- Exercise 2 -->
-<div class="col-span-1 md:col-span-4 lg:col-span-6 flex flex-col exercise-card bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden">
+<div onclick="window.location.href='exercises/exercise2.html'" class="col-span-1 md:col-span-4 lg:col-span-6 flex flex-col exercise-card bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden cursor-pointer">
 <div class="h-48 overflow-hidden bg-surface-variant relative">
 <img class="w-full h-full object-cover opacity-80" data-alt="An open academic journal with highlighted passages resting on a polished wooden desk, accompanied by a pair of modern eyeglasses and a laptop in the background. The lighting is focused and warm, suggestive of deep intellectual work and focused research. The overall visual style is academic yet contemporary, utilizing a palette of deep forest green and ivory white to convey authority and scholarly pursuit." src="https://lh3.googleusercontent.com/aida-public/AB6AXuByS1cXvIXdsctDyr5IV1FJX2P0Dt-4aTrlDbbQmfn97LUDhB3wiThTbBb1gh1V0MROLi18eh41rxY1MR20ZzMrR6QcOcrlEHayahTKontbIy9EMqrD2MvNpNn6y-2O0YIEKDaXTKU-NWymNsFixbtY_xIKAiO3gmgCsJ-gGh45pyWSQBetx_d5DkdJ8uRY-iAAMCpY7NOLWmxqTwTAZ8pgbR-Xz-qcF6hjgp6rtUF8Y6R2Mj7mx6Yfa62yfhsTuzDtjY5bChlMiQz8"/>
 <div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
@@ -233,7 +231,7 @@
 </div>
 </div>
 <!-- Exercise 3 (Wide) -->
-<div class="col-span-1 md:col-span-8 lg:col-span-12 exercise-card bg-primary-container text-on-primary-container p-8 rounded-xl flex flex-col md:flex-row gap-8 items-center border border-primary">
+<div onclick="window.location.href='exercises/exercise3.html'" class="col-span-1 md:col-span-8 lg:col-span-12 exercise-card bg-primary-container text-on-primary-container p-8 rounded-xl flex flex-col md:flex-row gap-8 items-center border border-primary cursor-pointer">
 <div class="flex-1 order-2 md:order-1">
 <div class="flex items-center gap-2 mb-4">
 <span class="w-8 h-8 rounded bg-primary-fixed text-primary flex items-center justify-center font-bold">03</span>
@@ -257,7 +255,7 @@
 </div>
 </div>
 <!-- Exercise 4 -->
-<div class="col-span-1 md:col-span-4 lg:col-span-4 flex flex-col exercise-card bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden">
+<div onclick="window.location.href='exercises/exercise4.html'" class="col-span-1 md:col-span-4 lg:col-span-4 flex flex-col exercise-card bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden cursor-pointer">
 <div class="p-6 flex-1 flex flex-col">
 <div class="flex items-center gap-2 mb-3">
 <span class="w-8 h-8 rounded bg-surface-container-highest flex items-center justify-center font-bold text-primary">04</span>
@@ -270,7 +268,7 @@
 </div>
 </div>
 <!-- Exercise 5 -->
-<div class="col-span-1 md:col-span-4 lg:col-span-4 flex flex-col exercise-card bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden">
+<div onclick="window.location.href='exercises/exercise5.html'" class="col-span-1 md:col-span-4 lg:col-span-4 flex flex-col exercise-card bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden cursor-pointer">
 <div class="p-6 flex-1 flex flex-col">
 <div class="flex items-center gap-2 mb-3">
 <span class="w-8 h-8 rounded bg-surface-container-highest flex items-center justify-center font-bold text-primary">05</span>
@@ -283,7 +281,7 @@
 </div>
 </div>
 <!-- Exercise 6 -->
-<div class="col-span-1 md:col-span-4 lg:col-span-4 flex flex-col exercise-card bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden">
+<div onclick="window.location.href='exercises/exercise6.html'" class="col-span-1 md:col-span-4 lg:col-span-4 flex flex-col exercise-card bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden cursor-pointer">
 <div class="p-6 flex-1 flex flex-col">
 <div class="flex items-center gap-2 mb-3">
 <span class="w-8 h-8 rounded bg-surface-container-highest flex items-center justify-center font-bold text-primary">06</span>
@@ -314,18 +312,18 @@
                     </button>
 </div>
 </section>
-</main>
+</div></main>
 </div>
 <!-- Footer -->
-<footer class="w-full py-stack-lg px-margin-mobile md:px-gutter mt-section-gap bg-surface-container-highest dark:bg-inverse-surface">
-<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<footer class="lg:ml-64 py-stack-lg px-margin-mobile md:px-gutter mt-section-gap bg-surface-container-highest border-t border-outline-variant">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-stack-md">
 <div class="text-center md:text-left">
 <div class="font-headline-sm text-headline-sm font-bold text-on-background mb-2">Đỗ Hồng Anh</div>
-<p class="text-on-surface-variant font-body-md text-body-md max-w-md">© 2024 Digital Portfolio. Sinh viên Đại học Công nghệ - Chuyên ngành CNTT.</p>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2026 Digital Portfolio. Sinh viên Đại học Công nghệ - Chuyên ngành CNTT.</p>
 </div>
 <div class="flex gap-6">
-<a class="text-on-surface-variant font-label-md text-label-md hover:underline decoration-primary transition-all opacity-90 hover:opacity-100" href="mailto:dha52vk@gmail.com">Email</a>
-<a class="text-on-surface-variant font-label-md text-label-md hover:underline decoration-primary transition-all opacity-90 hover:opacity-100" href="https://github.com/dha52vk" target="_blank">GitHub</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:underline decoration-primary transition-colors" href="mailto:dha52vk@gmail.com">Email</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:underline decoration-primary transition-colors" href="https://github.com/dha52vk" target="_blank">GitHub</a>
 </div>
 </div>
 </footer>
@@ -354,4 +352,20 @@
         `;
         document.head.appendChild(style);
     </script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const sidebar = document.getElementById('mobile-sidebar');
+        if (menuBtn && sidebar) {
+            menuBtn.addEventListener('click', () => {
+                sidebar.classList.toggle('hidden');
+            });
+        }
+    });
+</script>
 </body></html>
+
+
+
+
+

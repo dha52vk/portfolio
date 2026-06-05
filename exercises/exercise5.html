@@ -1,0 +1,353 @@
+﻿<!DOCTYPE html>
+
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Báo cáo Bài tập 5 - Đỗ Hồng Anh</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Be Vietnam Pro -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS & Configuration -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#00442a",
+                    "on-secondary-fixed": "#161d1b",
+                    "tertiary-fixed-dim": "#f8bd3e",
+                    "tertiary-container": "#6b4c00",
+                    "surface-variant": "#dde4e6",
+                    "outline": "#707972",
+                    "on-tertiary-fixed": "#261900",
+                    "surface-container-high": "#e2e9ec",
+                    "on-primary-fixed-variant": "#005233",
+                    "secondary": "#59605e",
+                    "surface-dim": "#d4dbdd",
+                    "secondary-fixed": "#dde4e1",
+                    "on-tertiary-fixed-variant": "#5d4200",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-container": "#f6bb3c",
+                    "on-secondary-container": "#5d6462",
+                    "inverse-on-surface": "#ebf2f4",
+                    "surface": "#f4fafd",
+                    "surface-container": "#e8eff1",
+                    "error-container": "#ffdad6",
+                    "surface-bright": "#f4fafd",
+                    "outline-variant": "#bfc9c0",
+                    "tertiary": "#4e3700",
+                    "on-surface": "#161d1f",
+                    "inverse-primary": "#8fd5ad",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "primary-fixed-dim": "#8fd5ad",
+                    "on-tertiary": "#ffffff",
+                    "background": "#f4fafd",
+                    "on-secondary-fixed-variant": "#414846",
+                    "on-primary-fixed": "#002112",
+                    "on-primary-container": "#8ed4ab",
+                    "on-surface-variant": "#404942",
+                    "primary-fixed": "#abf2c8",
+                    "secondary-fixed-dim": "#c1c8c5",
+                    "tertiary-fixed": "#ffdea4",
+                    "on-background": "#161d1f",
+                    "surface-container-highest": "#dde4e6",
+                    "error": "#ba1a1a",
+                    "primary-container": "#135d3d",
+                    "surface-tint": "#246a49",
+                    "surface-container-low": "#eef5f7",
+                    "secondary-container": "#dae1de",
+                    "inverse-surface": "#2b3234"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "stack-sm": "8px",
+                    "stack-lg": "32px",
+                    "container-max": "1200px",
+                    "stack-md": "16px",
+                    "section-gap": "80px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Be Vietnam Pro"],
+                    "headline-xl": ["Be Vietnam Pro"],
+                    "body-md": ["Be Vietnam Pro"],
+                    "headline-lg": ["Be Vietnam Pro"],
+                    "headline-sm": ["Be Vietnam Pro"],
+                    "headline-lg-mobile": ["Be Vietnam Pro"],
+                    "label-md": ["Be Vietnam Pro"],
+                    "headline-md": ["Be Vietnam Pro"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-xl": ["40px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-background border-b border-outline-variant h-16">
+<nav class="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto h-full">
+<div class="font-headline-md text-headline-md font-bold text-primary cursor-pointer" onclick="window.location.href='../index.html'">Digital Portfolio</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="../index.html">Trang chủ</a>
+<a class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary pb-1 transition-colors" href="../exercise_list.html">Bài tập</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="../index.html#about">Giới thiệu</a>
+<button class="bg-primary text-on-primary px-6 py-2 rounded font-label-md text-label-md hover:opacity-90 active:scale-95 transition-all" onclick="window.location.href='../contact.html'">Liên hệ</button>
+</div>
+<!-- Mobile Toggle -->
+<button id="mobile-menu-btn" class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+</header>
+
+<!-- Side Navigation Bar -->
+<aside id="mobile-sidebar" class="fixed left-0 top-16 bottom-0 z-40 bg-surface-container-low h-full w-64 hidden lg:block border-r border-outline-variant overflow-y-auto">
+<div class="p-6 mb-4">
+<h2 class="font-headline-sm text-headline-sm font-bold text-primary">Danh sách bài tập</h2>
+<p class="font-label-md text-label-md text-on-surface-variant">Điều hướng</p>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercise1.html">
+<span class="material-symbols-outlined" data-icon="folder">folder</span> Bài 1: Thao tác cơ bản với tệp tin và thư mục
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercise2.html">
+<span class="material-symbols-outlined" data-icon="search">search</span> Bài 2: Tìm kiếm và đánh giá thông tin học thuật
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercise3.html">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span> Bài 3: Kỹ năng viết Prompt trong học tập
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercise4.html">
+<span class="material-symbols-outlined" data-icon="groups">groups</span> Bài 4: Kỹ năng làm việc nhóm
+</a>
+<a class="bg-primary-container text-on-primary-container rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercise5.html">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span> Bài 5: Ứng dụng AI tạo sinh trong sáng tạo nội dung số
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercise6.html">
+<span class="material-symbols-outlined" data-icon="gavel">gavel</span> Bài 6: Phát triển kỹ năng sử dụng AI có trách nhiệm và đạo đức trong học thuật
+</a>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 lg:ml-64 pt-16 min-h-screen flex flex-col">
+<div class="max-w-[1200px] w-full mx-auto px-margin-mobile md:px-gutter py-stack-lg flex-1 flex flex-col min-w-0">
+<!-- Header Section -->
+<header class="mb-12">
+    <!-- Breadcrumbs -->
+    <nav class="flex items-center gap-2 mb-8 text-on-surface-variant">
+        <a class="hover:text-primary font-label-md text-label-md transition-colors" href="../index.html">Trang chủ</a>
+        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+        <a class="hover:text-primary font-label-md text-label-md transition-colors" href="../exercise_list.html">Bài tập</a>
+        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+        <span class="text-primary font-bold font-label-md text-label-md">Bài 5</span>
+    </nav>
+    <div class="bg-surface-container-lowest rounded-xl p-8 border border-outline-variant shadow-sm">
+        <div class="border-b-4 border-primary pb-6 mb-6 text-center md:text-left">
+            <h1 class="font-headline-xl text-headline-xl text-primary mb-4 uppercase tracking-tight">Bài 5: Ứng dụng AI tạo sinh trong sáng tạo nội dung số</h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">Ứng dụng AI tạo sinh (như Google Gemini, ChatGPT, Canva) vào quy trình sáng tạo, từ lên ý tưởng đến tạo ra sản phẩm thực tế.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="space-y-1">
+                <p class="text-on-surface-variant font-label-md uppercase tracking-wider">Họ và tên</p>
+                <p class="font-headline-sm text-headline-sm text-on-surface">Đỗ Hồng Anh</p>
+            </div>
+            <div class="space-y-1">
+                <p class="text-on-surface-variant font-label-md uppercase tracking-wider">Trường/Lớp</p>
+                <p class="font-body-lg text-body-lg text-on-surface">Đại học Công nghệ, ĐHQGHN (UET)</p>
+            </div>
+            <div class="space-y-1">
+                <p class="text-on-surface-variant font-label-md uppercase tracking-wider">Ngành học</p>
+                <p class="font-body-lg text-body-lg text-on-surface">Công nghệ Thông tin</p>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Section I: MÔ TẢ DỰ ÁN VÀ LỰA CHỌN CÔNG CỤ -->
+<section class="mb-section-gap">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-stack-lg flex items-center gap-2">
+<span class="material-symbols-outlined">rocket_launch</span>
+                I. MÔ TẢ DỰ ÁN VÀ LỰA CHỌN CÔNG CỤ
+            </h2>
+<div class="bg-surface rounded-xl p-stack-lg border border-outline-variant mb-stack-lg shadow-sm">
+<p class="font-body-lg text-body-lg text-on-surface mb-stack-md">
+                    Dự án nhằm tạo ra một bộ nội dung quảng bá bao gồm: 01 Bài viết giới thiệu sản phẩm, 01 Poster quảng cáo và 01 Infographic hướng dẫn sử dụng. Để tối ưu hóa quy trình, tôi lựa chọn:
+                </p>
+<ul class="space-y-3 mt-4">
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<p class="font-body-md text-body-md"><strong>Google Gemini:</strong> Phụ trách lên kịch bản nội dung và tối ưu hóa Prompt.</p>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<p class="font-body-md text-body-md"><strong>Gemini Banana:</strong> Tạo hình ảnh minh họa chất lượng cao theo phong cách 3D Isometric.</p>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<p class="font-body-md text-body-md"><strong>Canva AI (Magic Design):</strong> Hỗ trợ bố cục và tích hợp các thành phần đồ họa.</p>
+</li>
+</ul>
+</div>
+</section>
+<!-- Section II: CHI TIẾT QUÁ TRÌNH SỬ DỤNG AI -->
+<section class="mb-section-gap relative">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-stack-lg flex items-center gap-2">
+<span class="material-symbols-outlined">smart_toy</span>
+                II. CHI TIẾT QUÁ TRÌNH SỬ DỤNG AI
+            </h2>
+<div class="space-y-stack-lg border-l-2 border-primary-container ml-4 pl-8 relative">
+<!-- Step 1 -->
+<div class="relative">
+<div class="absolute -left-[42px] top-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold font-label-md text-label-md">1</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">Giai đoạn tạo văn bản (Google Gemini)</h3>
+<div class="bg-surface-container rounded-xl p-stack-md space-y-4">
+<div>
+<span class="font-label-md text-label-md text-secondary uppercase tracking-wider block mb-1">Prompt 1</span>
+<div class="bg-surface-container-lowest p-3 rounded-lg border border-outline-variant/30 font-body-md text-body-md font-mono text-on-surface-variant">
+                                "Hãy đóng vai một chuyên gia Marketing, viết một bài giới thiệu ngắn 300 chữ về ứng dụng AuctionHub - ứng dụng đấu giá trực tuyến an toàn, nhanh chóng cho sinh viên."
+                            </div>
+</div>
+<p class="font-body-md text-body-md text-on-surface"><strong>Kết quả:</strong> Nội dung đầy đủ nhưng còn khô khan.</p>
+<p class="font-body-md text-body-md text-on-surface"><strong>Chỉnh sửa cá nhân:</strong> Tôi đã yêu cầu Gemini viết lại theo phong cách "hóm hỉnh, trẻ trung" và tự mình bổ sung các tính năng kỹ thuật thực tế của dự án (OTP, PostgreSQL, Spring Boot) để tăng tính chuyên môn.</p><div class="mt-4 rounded-xl overflow-hidden border border-outline-variant/30 shadow-sm bg-surface-container-lowest p-2"><img alt="AuctionHub Content Preview" class="w-full h-auto rounded-lg" src="../assets/images/5.1.png"/></div>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="relative">
+<div class="absolute -left-[42px] top-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold font-label-md text-label-md">2</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">Giai đoạn tạo hình ảnh (Gemini Banana)</h3>
+<div class="bg-surface-container rounded-xl p-stack-md space-y-4">
+<div>
+<span class="font-label-md text-label-md text-secondary uppercase tracking-wider block mb-1">Prompt 2</span>
+<div class="bg-surface-container-lowest p-3 rounded-lg border border-outline-variant/30 font-body-md text-body-md font-mono text-on-surface-variant">
+                                /imagine prompt: high quality 3d isometric mobile app UI for auction, futuristic blue and purple color palette, glowing lights, floating coins, cinematic lighting, 8k --ar 16:9
+                            </div>
+</div>
+<p class="font-body-md text-body-md text-on-surface"><strong>Kết quả:</strong> Hình ảnh rất ấn tượng nhưng các ký tự trên màn hình điện thoại bị sai chính tả.</p>
+<p class="font-body-md text-body-md text-on-surface"><strong>Chỉnh sửa cá nhân:</strong> Tôi sử dụng tính năng Vary (Region) để xóa bỏ phần văn bản lỗi của AI và thay thế bằng logo AuctionHub tự thiết kế.</p>
+<div class="mt-4 rounded-xl overflow-hidden border border-outline-variant/30 shadow-sm bg-surface-container-lowest p-2"><img alt="Gemini Banana AI Output" class="w-full h-auto rounded-lg" src="../assets/images/5.2.png"/></div></div>
+</div>
+<!-- Step 3 -->
+<div class="relative">
+<div class="absolute -left-[42px] top-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold font-label-md text-label-md">3</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">Giai đoạn thiết kế và tích hợp (Canva AI)</h3>
+<div class="bg-surface-container rounded-xl p-stack-md space-y-4">
+<p class="font-body-md text-body-md text-on-surface"><strong>Thao tác:</strong> Tôi tải ảnh từ Gemini Banana lên Canva và sử dụng tính năng Magic Edit để thêm các chi tiết nhỏ như icon đồng hồ đếm ngược.</p>
+<p class="font-body-md text-body-md text-on-surface"><strong>Đóng góp cá nhân (Trọng tâm):</strong> Tôi tự tay sắp xếp bố cục (layout), lựa chọn font chữ phù hợp với bộ nhận diện của UET và viết các dòng Call-to-Action (CTA) thực tế.</p>
+<div class="mt-4 rounded-xl overflow-hidden border border-outline-variant/30 shadow-sm bg-surface-container-lowest p-2"><img alt="Canva AI Final Design" class="w-full h-auto rounded-lg" src="../assets/images/5.3.png"/></div></div>
+</div>
+</div>
+</section>
+<!-- Section III: SO SÁNH VÀ PHÂN TÍCH CÔNG CỤ -->
+<section class="mb-section-gap">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-stack-lg flex items-center gap-2">
+<span class="material-symbols-outlined">balance</span>
+                III. SO SÁNH VÀ PHÂN TÍCH CÔNG CỤ
+            </h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-surface-container-low rounded-xl p-stack-md border border-outline-variant/50 hover:shadow-md transition-shadow">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Về khả năng ngôn ngữ</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Google Gemini vượt trội ở việc hiểu ngữ cảnh địa phương (Việt Nam) và hỗ trợ tư duy logic rất tốt. So với ChatGPT, Gemini có lợi thế hơn trong việc cập nhật dữ liệu thời gian thực nhưng khả năng sáng tạo văn chương có phần kém hơn một chút.</p>
+</div>
+<div class="bg-surface-container-low rounded-xl p-stack-md border border-outline-variant/50 hover:shadow-md transition-shadow">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Về khả năng hình ảnh</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Gemini Banana là "vua" về chất lượng nghệ thuật. So với DALL-E 3, nó tạo ra các hình ảnh có chiều sâu và ánh sáng chuyên nghiệp hơn hẳn, đặc biệt là phong cách 3D Isometric. Điểm yếu là nó cực kỳ kém trong việc render văn bản.</p>
+</div>
+<div class="bg-surface-container-low rounded-xl p-stack-md border border-outline-variant/50 hover:shadow-md transition-shadow">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Về hỗ trợ thiết kế</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Canva AI là công cụ "gắn kết" tuyệt vời. Nó cho phép chuyển đổi từ ý tưởng văn bản sang bố cục đồ họa chỉ trong vài giây, tối ưu hóa quy trình làm việc đáng kể.</p>
+</div>
+</div>
+</section>
+<!-- Section IV: VAI TRÒ CỦA AI VÀ VẤN ĐỀ ĐẠO ĐỨC -->
+<section class="mb-section-gap">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-stack-lg flex items-center gap-2">
+<span class="material-symbols-outlined">gavel</span>
+                IV. VAI TRÒ CỦA AI VÀ VẤN ĐỀ ĐẠO ĐỨC
+            </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="bg-surface-container rounded-xl p-stack-lg border border-outline-variant/30">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-4">1. Vai trò và sự thay đổi quy trình</h3>
+<p class="font-body-md text-body-md text-on-surface mb-2">AI giải quyết tốt bài toán "nỗi sợ trang giấy trắng". Chuyển dịch trọng tâm từ Kỹ năng thực thi sang Kỹ năng thẩm định.</p>
+<p class="font-body-md text-body-md text-on-surface">AI vẫn hạn chế trong việc tạo ra nội dung mang tính cảm xúc sâu sắc hoặc sự am hiểu đặc thù về văn hóa sinh viên UET.</p>
+</div>
+<div class="bg-surface-container rounded-xl p-stack-lg border border-outline-variant/30">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-4">2. Vấn đề đạo đức cần cân nhắc</h3>
+<ul class="space-y-3 font-body-md text-body-md text-on-surface">
+<li class=""><strong>Bản quyền:</strong> Vùng xám về đạo đức khi sử dụng dữ liệu từ hàng tỷ tác phẩm gốc.</li>
+<li class=""><strong>Tính chân thực:</strong> Tránh việc AI "tự bịa" (hallucination) thông tin kỹ thuật.</li>
+<li class=""><strong>Sự phụ thuộc:</strong> Giữ tỷ lệ đóng góp cá nhân trên 50% để tránh mai một tư duy độc lập.</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Section V: KẾT LUẬN -->
+<section class="mb-section-gap">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-stack-lg flex items-center gap-2">
+<span class="material-symbols-outlined">verified</span>
+                V. KẾT LUẬN
+            </h2>
+<div class="bg-primary-container/10 rounded-xl p-stack-lg border border-primary-container/30">
+<p class="font-body-lg text-body-lg text-on-surface italic">
+                    "AI là công cụ khuếch đại sức sáng tạo mạnh mẽ nhưng sản phẩm chỉ thực sự có 'hồn' khi được nhào nặn bởi tư duy con người. Làm chủ AI là kỹ năng sinh tồn bắt buộc."
+                </p>
+</div>
+</section>
+<!-- Navigation Actions -->
+<section class="mt-auto pt-8 border-t border-outline-variant flex flex-col sm:flex-row gap-4 justify-between items-center">
+<button onclick="window.location.href='exercise4.html'" class="flex items-center gap-2 text-primary border border-primary px-6 py-2 rounded-lg font-label-md text-label-md hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+Bài 4
+</button>
+<button onclick="window.location.href='exercise6.html'" class="flex items-center gap-2 bg-primary text-on-primary px-8 py-2 rounded-lg font-label-md text-label-md hover:opacity-90 transition-opacity">
+Xem Bài 6
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</section>
+</div>
+</main>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const sidebar = document.getElementById('mobile-sidebar');
+        if (menuBtn && sidebar) {
+            menuBtn.addEventListener('click', () => {
+                sidebar.classList.toggle('hidden');
+            });
+        }
+    });
+</script>
+</body></html>
+
+
+
+
+
+
+

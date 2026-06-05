@@ -1,0 +1,509 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BÁO CÁO BÀI TẬP: KỸ NĂNG VIẾT PROMPT TRONG HỌC TẬP</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#e8eff1",
+                        "secondary": "#59605e",
+                        "tertiary-fixed-dim": "#f8bd3e",
+                        "on-secondary-container": "#5d6462",
+                        "surface-container-high": "#e2e9ec",
+                        "on-primary-fixed": "#002112",
+                        "surface-bright": "#f4fafd",
+                        "tertiary-container": "#6b4c00",
+                        "outline": "#707972",
+                        "surface-variant": "#dde4e6",
+                        "surface-container-low": "#eef5f7",
+                        "secondary-fixed": "#dde4e1",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#4e3700",
+                        "primary-fixed-dim": "#8fd5ad",
+                        "surface-dim": "#d4dbdd",
+                        "primary-container": "#135d3d",
+                        "on-surface": "#161d1f",
+                        "on-tertiary-fixed": "#261900",
+                        "inverse-on-surface": "#ebf2f4",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2b3234",
+                        "outline-variant": "#bfc9c0",
+                        "surface-tint": "#246a49",
+                        "on-tertiary-container": "#f6bb3c",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#161d1b",
+                        "on-secondary-fixed-variant": "#414846",
+                        "on-tertiary-fixed-variant": "#5d4200",
+                        "background": "#f4fafd",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#abf2c8",
+                        "primary": "#00442a",
+                        "on-surface-variant": "#404942",
+                        "on-primary-container": "#8ed4ab",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#ffdea4",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#c1c8c5",
+                        "secondary-container": "#dae1de",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#dde4e6",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#005233",
+                        "surface": "#f4fafd",
+                        "inverse-primary": "#8fd5ad",
+                        "on-background": "#161d1f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "container-max": "1200px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px",
+                        "stack-lg": "32px",
+                        "gutter": "24px",
+                        "section-gap": "80px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Be Vietnam Pro"],
+                        "headline-lg-mobile": ["Be Vietnam Pro"],
+                        "body-md": ["Be Vietnam Pro"],
+                        "body-lg": ["Be Vietnam Pro"],
+                        "label-md": ["Be Vietnam Pro"],
+                        "headline-sm": ["Be Vietnam Pro"],
+                        "headline-lg": ["Be Vietnam Pro"],
+                        "headline-md": ["Be Vietnam Pro"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["40px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Be Vietnam Pro', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .step-line::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 40px;
+            bottom: -20px;
+            width: 2px;
+            background-color: #bfc9c0;
+        }
+        .step-line:last-child::before { display: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-background border-b border-outline-variant h-16">
+<nav class="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto h-full">
+<div class="font-headline-md text-headline-md font-bold text-primary cursor-pointer" onclick="window.location.href='../index.html'">Digital Portfolio</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="../index.html">Trang chủ</a>
+<a class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary pb-1 transition-colors" href="../exercise_list.html">Bài tập</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="../index.html#about">Giới thiệu</a>
+<button class="bg-primary text-on-primary px-6 py-2 rounded font-label-md text-label-md hover:opacity-90 active:scale-95 transition-all" onclick="window.location.href='../contact.html'">Liên hệ</button>
+</div>
+<!-- Mobile Toggle -->
+<button id="mobile-menu-btn" class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+</header>
+
+<!-- Side Navigation Bar -->
+<aside id="mobile-sidebar" class="fixed left-0 top-16 bottom-0 z-40 bg-surface-container-low h-full w-64 hidden lg:block border-r border-outline-variant overflow-y-auto">
+<div class="p-6 mb-4">
+<h2 class="font-headline-sm text-headline-sm font-bold text-primary">Danh sách bài tập</h2>
+<p class="font-label-md text-label-md text-on-surface-variant">Điều hướng</p>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercise1.html">
+<span class="material-symbols-outlined" data-icon="folder">folder</span> Bài 1: Thao tác cơ bản với tệp tin và thư mục
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercise2.html">
+<span class="material-symbols-outlined" data-icon="search">search</span> Bài 2: Tìm kiếm và đánh giá thông tin học thuật
+</a>
+<a class="bg-primary-container text-on-primary-container rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercise3.html">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span> Bài 3: Kỹ năng viết Prompt trong học tập
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercise4.html">
+<span class="material-symbols-outlined" data-icon="groups">groups</span> Bài 4: Kỹ năng làm việc nhóm
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercise5.html">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span> Bài 5: Ứng dụng AI tạo sinh trong sáng tạo nội dung số
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercise6.html">
+<span class="material-symbols-outlined" data-icon="gavel">gavel</span> Bài 6: Phát triển kỹ năng sử dụng AI có trách nhiệm và đạo đức trong học thuật
+</a>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 lg:ml-64 pt-16 min-h-screen flex flex-col">
+<div class="max-w-[1200px] w-full mx-auto px-margin-mobile md:px-gutter py-stack-lg flex-1 flex flex-col">
+<!-- Header Section -->
+<header class="mb-12">
+    <!-- Breadcrumbs -->
+    <nav class="flex items-center gap-2 mb-8 text-on-surface-variant">
+        <a class="hover:text-primary font-label-md text-label-md transition-colors" href="../index.html">Trang chủ</a>
+        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+        <a class="hover:text-primary font-label-md text-label-md transition-colors" href="../exercise_list.html">Bài tập</a>
+        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+        <span class="text-primary font-bold font-label-md text-label-md">Bài 3</span>
+    </nav>
+    <div class="bg-surface-container-lowest rounded-xl p-8 border border-outline-variant shadow-sm">
+        <div class="border-b-4 border-primary pb-6 mb-6 text-center md:text-left">
+            <h1 class="font-headline-xl text-headline-xl text-primary mb-4 uppercase tracking-tight">Bài 3: Kỹ năng viết Prompt trong học tập</h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">Tìm hiểu và thực hành các kỹ thuật viết Prompt nâng cao để tối ưu hóa hiệu quả sử dụng AI.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="space-y-1">
+                <p class="text-on-surface-variant font-label-md uppercase tracking-wider">Họ và tên</p>
+                <p class="font-headline-sm text-headline-sm text-on-surface">Đỗ Hồng Anh</p>
+            </div>
+            <div class="space-y-1">
+                <p class="text-on-surface-variant font-label-md uppercase tracking-wider">Trường/Lớp</p>
+                <p class="font-body-lg text-body-lg text-on-surface">Đại học Công nghệ, ĐHQGHN (UET)</p>
+            </div>
+            <div class="space-y-1">
+                <p class="text-on-surface-variant font-label-md uppercase tracking-wider">Ngành học</p>
+                <p class="font-body-lg text-body-lg text-on-surface">Công nghệ Thông tin</p>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Section I -->
+<section class="mb-section-gap">
+<div class="flex items-center gap-3 mb-stack-lg">
+<div class="bg-primary text-on-primary w-10 h-10 rounded-full flex items-center justify-center font-bold">I</div>
+<h2 class="font-headline-lg text-headline-lg text-primary">Lựa chọn và phân tích tác vụ học tập</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:shadow-md transition-all">
+<div class="text-primary mb-4">
+<span class="material-symbols-outlined text-4xl" data-icon="translate">translate</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-2">1. Ngoại ngữ</h3>
+<p class="text-body-md text-on-surface-variant">Tóm tắt tài liệu tiếng Anh học thuật cấp độ B1, tập trung vào cấu trúc và từ vựng cốt lõi.</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:shadow-md transition-all">
+<div class="text-primary mb-4">
+<span class="material-symbols-outlined text-4xl" data-icon="functions">functions</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-2">2. Toán chuyên ngành</h3>
+<p class="text-body-md text-on-surface-variant">Giải thích khái niệm 'Trị riêng - Vector riêng' ứng dụng trong Computer Vision &amp; OpenCV.</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:shadow-md transition-all">
+<div class="text-primary mb-4">
+<span class="material-symbols-outlined text-4xl" data-icon="code">code</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-2">3. Lập trình Java</h3>
+<p class="text-body-md text-on-surface-variant">Tạo bộ câu hỏi ôn tập Java OOP dành cho hệ thống đấu giá AuctionHub.</p>
+</div>
+</div>
+</section>
+<!-- Sections II & III -->
+<section class="mb-section-gap">
+<div class="flex items-center gap-3 mb-stack-lg">
+<div class="bg-primary text-on-primary w-10 h-10 rounded-full flex items-center justify-center font-bold">II</div>
+<h2 class="font-headline-lg text-headline-lg text-primary">Xây dựng prompt và Thử nghiệm thực tế</h2>
+</div>
+<!-- Task 1: English -->
+<div class="mb-16">
+<div class="flex items-center gap-4 py-3 border-b-2 border-secondary-container mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="auto_stories">auto_stories</span>
+<h3 class="font-headline-md text-headline-md">Tác vụ 1: Tóm tắt tài liệu Tiếng Anh (B1 Level)</h3>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
+<!-- Basic -->
+<div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant flex flex-col h-full">
+<div class="mb-4">
+<span class="px-3 py-1 bg-outline-variant text-on-surface font-label-md rounded-full">Cơ bản</span>
+</div>
+<div class="flex-1 space-y-4">
+<div>
+<p class="text-label-md text-primary font-bold mb-1 uppercase tracking-tight">Prompt:</p>
+<div class="bg-white p-3 rounded border border-outline-variant italic text-body-md">"Tóm tắt bài đọc sau..."</div>
+</div>
+<div class="pt-4 border-t border-outline-variant/30">
+<p class="text-label-md text-primary font-bold mb-1 uppercase tracking-tight">Kết quả:</p>
+<p class="text-body-md text-on-surface-variant">Tóm tắt quá dài, dùng nhiều từ vựng chuyên ngành khó, không hỗ trợ học tập hiệu quả.</p>
+</div>
+</div>
+</div>
+<!-- Improved -->
+<div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant flex flex-col h-full">
+<div class="mb-4">
+<span class="px-3 py-1 bg-secondary-fixed text-on-secondary-fixed-variant font-label-md rounded-full">Cải tiến</span>
+</div>
+<div class="flex-1 space-y-4">
+<div>
+<p class="text-label-md text-primary font-bold mb-1 uppercase tracking-tight">Prompt:</p>
+<div class="bg-white p-3 rounded border border-outline-variant italic text-body-md">"Tóm tắt bài sau bằng tiếng Anh và liệt kê từ khó."</div>
+</div>
+<div class="pt-4 border-t border-outline-variant/30">
+<p class="text-label-md text-primary font-bold mb-1 uppercase tracking-tight">Kết quả:</p>
+<p class="text-body-md text-on-surface-variant">Có danh sách từ vựng nhưng chưa có phiên âm và nghĩa tiếng Việt cụ thể cho trình độ B1.</p>
+</div>
+</div>
+</div>
+<!-- Advanced -->
+<div class="bg-primary-container/5 p-5 rounded-xl border-2 border-primary flex flex-col h-full shadow-sm">
+<div class="mb-4">
+<span class="px-3 py-1 bg-primary text-on-primary font-label-md rounded-full">Nâng cao (Vượt trội)</span>
+</div>
+<div class="flex-1 space-y-4">
+<div>
+<p class="text-label-md text-primary font-bold mb-1 uppercase tracking-tight">Prompt:</p>
+<div class="bg-white p-3 rounded border border-primary italic text-body-md">"Đóng vai giáo viên tiếng Anh. Tôi đang ở trình độ B1. Hãy tóm tắt bài này bằng tiếng Anh (khoảng 80 từ) dùng từ vựng mức B1. Sau đó lập bảng 5 từ khóa quan trọng nhất, kèm phiên âm và nghĩa tiếng Việt."</div>
+</div>
+<div class="pt-4 border-t border-primary/20">
+<p class="text-label-md text-primary font-bold mb-1 uppercase tracking-tight">Kết quả:</p>
+<p class="text-body-md text-on-surface-variant">Nội dung tóm tắt vừa sức, bảng từ vựng cực kỳ hữu ích với IPA và dịch nghĩa chính xác.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Task 2: Math -->
+<div class="mb-16">
+<div class="flex items-center gap-4 py-3 border-b-2 border-secondary-container mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="query_stats">query_stats</span>
+<h3 class="font-headline-md text-headline-md">Tác vụ 2: Giải thích khái niệm Toán (Trị riêng - Vector riêng)</h3>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
+<!-- Basic -->
+<div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant flex flex-col h-full">
+<div class="mb-4">
+<span class="px-3 py-1 bg-outline-variant text-on-surface font-label-md rounded-full">Cơ bản</span>
+</div>
+<div class="flex-1 space-y-4">
+<div>
+<p class="text-label-md text-primary font-bold mb-1 uppercase tracking-tight">Prompt:</p>
+<div class="bg-white p-3 rounded border border-outline-variant italic text-body-md">"Trị riêng và Vector riêng là gì?"</div>
+</div>
+<div class="pt-4 border-t border-outline-variant/30">
+<p class="text-label-md text-primary font-bold mb-1 uppercase tracking-tight">Kết quả:</p>
+<p class="text-body-md text-on-surface-variant">Định nghĩa mang tính hàn lâm, nặng về công thức toán học khô khan, khó hình dung ứng dụng.</p>
+</div>
+</div>
+</div>
+<!-- Improved -->
+<div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant flex flex-col h-full">
+<div class="mb-4">
+<span class="px-3 py-1 bg-secondary-fixed text-on-secondary-fixed-variant font-label-md rounded-full">Cải tiến</span>
+</div>
+<div class="flex-1 space-y-4">
+<div>
+<p class="text-label-md text-primary font-bold mb-1 uppercase tracking-tight">Prompt:</p>
+<div class="bg-white p-3 rounded border border-outline-variant italic text-body-md">"Giải thích trị riêng và vector riêng bằng ví dụ thực tế."</div>
+</div>
+<div class="pt-4 border-t border-outline-variant/30">
+<p class="text-label-md text-primary font-bold mb-1 uppercase tracking-tight">Kết quả:</p>
+<p class="text-body-md text-on-surface-variant">Có ví dụ nhưng còn rời rạc, chưa liên kết chặt chẽ với chuyên ngành Computer Vision.</p>
+</div>
+</div>
+</div>
+<!-- Advanced -->
+<div class="bg-primary-container/5 p-5 rounded-xl border-2 border-primary flex flex-col h-full shadow-sm">
+<div class="mb-4">
+<span class="px-3 py-1 bg-primary text-on-primary font-label-md rounded-full">Nâng cao (Vượt trội)</span>
+</div>
+<div class="flex-1 space-y-4">
+<div>
+<p class="text-label-md text-primary font-bold mb-1 uppercase tracking-tight">Prompt:</p>
+<div class="bg-white p-3 rounded border border-primary italic text-body-md">"Hãy đóng vai một chuyên gia Computer Vision. Giải thích khái niệm Trị riêng và Vector riêng cho sinh viên năm 2. Sử dụng phép ẩn dụ (analogy) và cho biết ứng dụng của nó trong việc nén ảnh hoặc nhận diện khuôn mặt."</div>
+</div>
+<div class="pt-4 border-t border-primary/20">
+<p class="text-label-md text-primary font-bold mb-1 uppercase tracking-tight">Kết quả:</p>
+<p class="text-body-md text-on-surface-variant">Cách giải thích trực quan sinh động, giúp hiểu rõ bản chất toán học thông qua ứng dụng thực tế.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Task 3: Java -->
+<div class="mb-16">
+<div class="flex items-center gap-4 py-3 border-b-2 border-secondary-container mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="terminal">terminal</span>
+<h3 class="font-headline-md text-headline-md">Tác vụ 3: Ôn tập Java OOP (Project AuctionHub)</h3>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
+<!-- Basic -->
+<div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant flex flex-col h-full">
+<div class="mb-4">
+<span class="px-3 py-1 bg-outline-variant text-on-surface font-label-md rounded-full">Cơ bản</span>
+</div>
+<div class="flex-1 space-y-4">
+<div>
+<p class="text-label-md text-primary font-bold mb-1 uppercase tracking-tight">Prompt:</p>
+<div class="bg-white p-3 rounded border border-outline-variant italic text-body-md">"Cho tôi câu hỏi ôn tập Java OOP."</div>
+</div>
+<div class="pt-4 border-t border-outline-variant/30">
+<p class="text-label-md text-primary font-bold mb-1 uppercase tracking-tight">Kết quả:</p>
+<p class="text-body-md text-on-surface-variant">Câu hỏi lý thuyết chung chung, không bám sát dự án đang thực hiện.</p>
+</div>
+</div>
+</div>
+<!-- Improved -->
+<div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant flex flex-col h-full">
+<div class="mb-4">
+<span class="px-3 py-1 bg-secondary-fixed text-on-secondary-fixed-variant font-label-md rounded-full">Cải tiến</span>
+</div>
+<div class="flex-1 space-y-4">
+<div>
+<p class="text-label-md text-primary font-bold mb-1 uppercase tracking-tight">Prompt:</p>
+<div class="bg-white p-3 rounded border border-outline-variant italic text-body-md">"Tạo 5 câu hỏi Java về Tính kế thừa và Đa hình cho dự án AuctionHub."</div>
+</div>
+<div class="pt-4 border-t border-outline-variant/30">
+<p class="text-label-md text-primary font-bold mb-1 uppercase tracking-tight">Kết quả:</p>
+<p class="text-body-md text-on-surface-variant">Câu hỏi có tính ứng dụng cao hơn, tập trung đúng vào các chủ đề yêu cầu.</p>
+</div>
+</div>
+</div>
+<!-- Advanced -->
+<div class="bg-primary-container/5 p-5 rounded-xl border-2 border-primary flex flex-col h-full shadow-sm">
+<div class="mb-4">
+<span class="px-3 py-1 bg-primary text-on-primary font-label-md rounded-full">Nâng cao (Vượt trội)</span>
+</div>
+<div class="flex-1 space-y-4">
+<div>
+<p class="text-label-md text-primary font-bold mb-1 uppercase tracking-tight">Prompt:</p>
+<div class="bg-white p-3 rounded border border-primary italic text-body-md">"Hãy đóng vai người phỏng vấn kỹ thuật. Hỏi tôi từng câu một về thiết kế OOP cho hệ thống AuctionHub. Sau khi tôi trả lời, hãy đánh giá mã nguồn dựa trên nguyên lý SOLID."</div>
+</div>
+<div class="pt-4 border-t border-primary/20">
+<p class="text-label-md text-primary font-bold mb-1 uppercase tracking-tight">Kết quả:</p>
+<p class="text-body-md text-on-surface-variant">Tạo môi trường học tập tương tác thực chiến, giúp phát hiện lỗi sai trong tư duy thiết kế.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section IV -->
+<section class="mb-section-gap">
+<div class="flex items-center gap-3 mb-stack-lg">
+<div class="bg-primary text-on-primary w-10 h-10 rounded-full flex items-center justify-center font-bold">IV</div>
+<h2 class="font-headline-lg text-headline-lg text-primary">Phân tích: Tại sao prompt nâng cao lại hiệu quả hơn?</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="flex flex-col items-center text-center p-6 bg-surface-container-highest rounded-xl hover:shadow-md transition-all">
+<div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-on-primary mb-4">
+<span class="material-symbols-outlined text-3xl" data-icon="theater_comedy">theater_comedy</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm mb-2">Role-playing</h4>
+<p class="text-body-md">Thiết lập ngữ cảnh chuyên môn giúp AI kích hoạt các 'layer' tri thức sâu và phong cách diễn đạt phù hợp với đối tượng.</p>
+</div>
+<div class="flex flex-col items-center text-center p-6 bg-surface-container-highest rounded-xl hover:shadow-md transition-all">
+<div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-on-primary mb-4">
+<span class="material-symbols-outlined text-3xl" data-icon="straighten">straighten</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm mb-2">Constraints</h4>
+<p class="text-body-md">Các ràng buộc về định dạng, độ dài và đối tượng giúp loại bỏ các thông tin nhiễu, tập trung tối đa vào mục tiêu học tập.</p>
+</div>
+<div class="flex flex-col items-center text-center p-6 bg-surface-container-highest rounded-xl hover:shadow-md transition-all">
+<div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-on-primary mb-4">
+<span class="material-symbols-outlined text-3xl" data-icon="account_tree">account_tree</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm mb-2">Thought Flow</h4>
+<p class="text-body-md">Chia nhỏ quy trình (Chain of Thought) ép AI phải suy luận qua từng bước thay vì đưa ra đáp án ngay lập tức một cách hời hợt.</p>
+</div>
+</div>
+</section>
+<!-- Section V -->
+<section class="mb-section-gap">
+<div class="flex items-center gap-3 mb-stack-lg">
+<div class="bg-primary text-on-primary w-10 h-10 rounded-full flex items-center justify-center font-bold">V</div>
+<h2 class="font-headline-lg text-headline-lg text-primary">Nguyên tắc viết prompt rút ra cho bản thân</h2>
+</div>
+<div class="relative space-y-8 pl-8">
+<div class="step-line relative flex gap-6">
+<div class="bg-secondary-container text-primary min-w-[40px] h-10 rounded flex items-center justify-center font-bold z-10 border border-primary/20">01</div>
+<div class="pt-1">
+<h4 class="font-headline-sm text-headline-sm text-primary mb-1">Context First</h4>
+<p class="text-body-md text-on-surface-variant">Luôn bắt đầu bằng việc định nghĩa "Bạn là ai?" và "Tôi đang làm gì?". Ngữ cảnh là chìa khóa của sự chính xác tuyệt đối.</p>
+</div>
+</div>
+<div class="step-line relative flex gap-6">
+<div class="bg-secondary-container text-primary min-w-[40px] h-10 rounded flex items-center justify-center font-bold z-10 border border-primary/20">02</div>
+<div class="pt-1">
+<h4 class="font-headline-sm text-headline-sm text-primary mb-1">Clear Structure</h4>
+<p class="text-body-md text-on-surface-variant">Yêu cầu định dạng đầu ra rõ ràng (Markdown, Table, Bullet points) để dễ dàng theo dõi, ghi chú và tái sử dụng cho việc ôn tập.</p>
+</div>
+</div>
+<div class="step-line relative flex gap-6">
+<div class="bg-secondary-container text-primary min-w-[40px] h-10 rounded flex items-center justify-center font-bold z-10 border border-primary/20">03</div>
+<div class="pt-1">
+<h4 class="font-headline-sm text-headline-sm text-primary mb-1">Interactive Rules</h4>
+<p class="text-body-md text-on-surface-variant">Đối với học tập, hãy biến AI thành người đặt câu hỏi (Socratic method) thay vì chỉ là máy trả lời để tăng tính chủ động và tư duy phản biện.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Navigation Actions -->
+<section class="mt-auto pt-8 border-t border-outline-variant flex flex-col sm:flex-row gap-4 justify-between items-center">
+<button onclick="window.location.href='exercise2.html'" class="flex items-center gap-2 text-primary border border-primary px-6 py-2 rounded-lg font-label-md text-label-md hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+Bài 2
+</button>
+<button onclick="window.location.href='exercise4.html'" class="flex items-center gap-2 bg-primary text-on-primary px-8 py-2 rounded-lg font-label-md text-label-md hover:opacity-90 transition-opacity">
+Xem Bài 4
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</section>
+</div>
+</main>
+</div>
+<script>
+        // Simple micro-interaction for cards
+        document.querySelectorAll('.grid > div').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-4px)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const sidebar = document.getElementById('mobile-sidebar');
+        if (menuBtn && sidebar) {
+            menuBtn.addEventListener('click', () => {
+                sidebar.classList.toggle('hidden');
+            });
+        }
+    });
+</script>
+</body></html>
+
+
+
+
+

@@ -1,0 +1,515 @@
+﻿<!DOCTYPE html><html class="light" lang="vi"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Bài tập 2: Tìm kiếm và đánh giá thông tin học thuật | Đỗ Hồng Anh</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#bfc9c0",
+                    "background": "#f4fafd",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#6b4c00",
+                    "tertiary": "#4e3700",
+                    "inverse-surface": "#2b3234",
+                    "tertiary-fixed": "#ffdea4",
+                    "on-background": "#161d1f",
+                    "on-secondary-fixed": "#161d1b",
+                    "secondary-container": "#dae1de",
+                    "surface-container": "#e8eff1",
+                    "primary-container": "#135d3d",
+                    "surface-variant": "#dde4e6",
+                    "surface": "#f4fafd",
+                    "error": "#ba1a1a",
+                    "secondary": "#59605e",
+                    "on-primary-container": "#8ed4ab",
+                    "surface-tint": "#246a49",
+                    "surface-dim": "#d4dbdd",
+                    "surface-container-low": "#eef5f7",
+                    "primary-fixed-dim": "#8fd5ad",
+                    "surface-bright": "#f4fafd",
+                    "on-secondary": "#ffffff",
+                    "primary": "#00442a",
+                    "on-surface": "#161d1f",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-container": "#5d6462",
+                    "inverse-primary": "#8fd5ad",
+                    "primary-fixed": "#abf2c8",
+                    "on-tertiary-container": "#f6bb3c",
+                    "on-secondary-fixed-variant": "#414846",
+                    "surface-container-high": "#e2e9ec",
+                    "on-primary-fixed": "#002112",
+                    "error-container": "#ffdad6",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed-dim": "#f8bd3e",
+                    "on-primary-fixed-variant": "#005233",
+                    "surface-container-highest": "#dde4e6",
+                    "outline": "#707972",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed": "#dde4e1",
+                    "on-tertiary-fixed-variant": "#5d4200",
+                    "on-tertiary-fixed": "#261900",
+                    "secondary-fixed-dim": "#c1c8c5",
+                    "inverse-on-surface": "#ebf2f4",
+                    "on-surface-variant": "#404942"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "section-gap": "80px",
+                    "container-max": "1200px",
+                    "stack-md": "16px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "stack-lg": "32px",
+                    "stack-sm": "8px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Be Vietnam Pro"],
+                    "headline-sm": ["Be Vietnam Pro"],
+                    "headline-lg-mobile": ["Be Vietnam Pro"],
+                    "label-md": ["Be Vietnam Pro"],
+                    "headline-md": ["Be Vietnam Pro"],
+                    "headline-lg": ["Be Vietnam Pro"],
+                    "headline-xl": ["Be Vietnam Pro"],
+                    "body-md": ["Be Vietnam Pro"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "headline-xl": ["40px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .scroll-hide::-webkit-scrollbar { display: none; }
+      .academic-paper {
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-background border-b border-outline-variant h-16">
+<nav class="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto h-full">
+<div class="font-headline-md text-headline-md font-bold text-primary cursor-pointer" onclick="window.location.href='../index.html'">Digital Portfolio</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="../index.html">Trang chủ</a>
+<a class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary pb-1 transition-colors" href="../exercise_list.html">Bài tập</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="../index.html#about">Giới thiệu</a>
+<button class="bg-primary text-on-primary px-6 py-2 rounded font-label-md text-label-md hover:opacity-90 active:scale-95 transition-all" onclick="window.location.href='../contact.html'">Liên hệ</button>
+</div>
+<!-- Mobile Toggle -->
+<button id="mobile-menu-btn" class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+</header>
+
+<!-- Side Navigation Bar -->
+<aside id="mobile-sidebar" class="fixed left-0 top-16 bottom-0 z-40 bg-surface-container-low h-full w-64 hidden lg:block border-r border-outline-variant overflow-y-auto">
+<div class="p-6 mb-4">
+<h2 class="font-headline-sm text-headline-sm font-bold text-primary">Danh sách bài tập</h2>
+<p class="font-label-md text-label-md text-on-surface-variant">Điều hướng</p>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercise1.html">
+<span class="material-symbols-outlined" data-icon="folder">folder</span> Bài 1: Thao tác cơ bản với tệp tin và thư mục
+</a>
+<a class="bg-primary-container text-on-primary-container rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercise2.html">
+<span class="material-symbols-outlined" data-icon="search">search</span> Bài 2: Tìm kiếm và đánh giá thông tin học thuật
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercise3.html">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span> Bài 3: Kỹ năng viết Prompt trong học tập
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercise4.html">
+<span class="material-symbols-outlined" data-icon="groups">groups</span> Bài 4: Kỹ năng làm việc nhóm
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercise5.html">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span> Bài 5: Ứng dụng AI tạo sinh trong sáng tạo nội dung số
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercise6.html">
+<span class="material-symbols-outlined" data-icon="gavel">gavel</span> Bài 6: Phát triển kỹ năng sử dụng AI có trách nhiệm và đạo đức trong học thuật
+</a>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 lg:ml-64 pt-16 min-h-screen flex flex-col">
+<div class="max-w-[1200px] w-full mx-auto px-margin-mobile md:px-gutter py-stack-lg flex-1 flex flex-col">
+<!-- Header Section -->
+<header class="mb-12">
+    <!-- Breadcrumbs -->
+    <nav class="flex items-center gap-2 mb-8 text-on-surface-variant">
+        <a class="hover:text-primary font-label-md text-label-md transition-colors" href="../index.html">Trang chủ</a>
+        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+        <a class="hover:text-primary font-label-md text-label-md transition-colors" href="../exercise_list.html">Bài tập</a>
+        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+        <span class="text-primary font-bold font-label-md text-label-md">Bài 2</span>
+    </nav>
+    <div class="bg-surface-container-lowest rounded-xl p-8 border border-outline-variant shadow-sm">
+        <div class="border-b-4 border-primary pb-6 mb-6 text-center md:text-left">
+            <h1 class="font-headline-xl text-headline-xl text-primary mb-4 uppercase tracking-tight">Bài 2: Tìm kiếm và đánh giá thông tin học thuật</h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">Xây dựng bộ kỹ năng tìm lọc thông tin từ các nguồn uy tín, đánh giá độ tin cậy của tài liệu nghiên cứu.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="space-y-1">
+                <p class="text-on-surface-variant font-label-md uppercase tracking-wider">Họ và tên</p>
+                <p class="font-headline-sm text-headline-sm text-on-surface">Đỗ Hồng Anh</p>
+            </div>
+            <div class="space-y-1">
+                <p class="text-on-surface-variant font-label-md uppercase tracking-wider">Trường/Lớp</p>
+                <p class="font-body-lg text-body-lg text-on-surface">Đại học Công nghệ, ĐHQGHN (UET)</p>
+            </div>
+            <div class="space-y-1">
+                <p class="text-on-surface-variant font-label-md uppercase tracking-wider">Ngành học</p>
+                <p class="font-body-lg text-body-lg text-on-surface">Công nghệ Thông tin</p>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Section I: Lựa chọn chủ đề -->
+<section class="mb-section-gap">
+<div class="flex items-center gap-4 mb-stack-lg">
+<div class="w-12 h-12 bg-primary flex items-center justify-center text-white font-bold text-xl rounded-lg">I</div>
+<h2 class="font-headline-md text-headline-md text-primary">Lựa chọn chủ đề và phạm vi tìm kiếm</h2>
+</div>
+<div class="bg-white rounded-xl p-8 border border-outline-variant">
+<div class="space-y-6">
+<div>
+<h3 class="font-label-md text-primary uppercase mb-2">1. Tên chủ đề</h3>
+<p class="font-headline-sm text-headline-sm text-on-surface">"Ứng dụng Computer Vision (Thị giác máy tính) trong Tự động hóa: Đánh giá và so sánh phương pháp Template Matching truyền thống với các mô hình mạng nơ-ron tích chập (CNN)."</p>
+</div>
+<div>
+<h3 class="font-label-md text-primary uppercase mb-2">2. Lý do chọn đề tài và tính thách thức</h3>
+<div class="bg-surface-container-low border-l-4 border-primary p-6 rounded-r-lg italic text-on-surface-variant">
+    Trong bối cảnh Tự động hóa quy trình bằng robot (RPA) và kiểm thử phần mềm tự động, việc nhận dạng các thành phần trên giao diện người dùng (GUI) là một thách thức lớn khi giao diện thay đổi linh hoạt hoặc chạy trên các môi trường khác nhau. Em chọn đề tài này để tìm hiểu cách kết hợp giữa các thuật toán xử lý ảnh kinh điển (nhanh, ít tốn tài nguyên) và AI hiện đại (chính xác cao, linh hoạt) nhằm tối ưu hóa hiệu suất cho các hệ thống tự động hóa thực tế. Thách thức nằm ở việc cân bằng giữa độ trễ (latency) và độ chính xác trong các tác vụ thời gian thực.
+</div>
+</div>
+<div class="pt-4">
+<h3 class="font-label-md text-primary uppercase mb-4">3. Phạm vi tìm kiếm</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="p-4 bg-background rounded-lg border border-outline-variant">
+<h4 class="font-label-md text-primary mb-2">Từ khóa chính</h4>
+<ul class="list-disc list-inside text-on-surface-variant text-sm space-y-1">
+<li>Computer Vision</li>
+<li>Template Matching</li>
+<li>Object Detection</li>
+<li>CNN</li>
+<li>OpenCV</li>
+<li>GUI Automation</li>
+</ul>
+</div>
+<div class="p-4 bg-background rounded-lg border border-outline-variant">
+<h4 class="font-label-md text-primary mb-2">Giới hạn thời gian</h4>
+<p class="text-on-surface-variant text-sm font-bold">2018 - 2026</p>
+<p class="text-xs text-on-surface-variant opacity-70 mt-1">Tập trung vào các tài liệu xuất bản mới nhất.</p>
+</div>
+<div class="p-4 bg-background rounded-lg border border-outline-variant">
+<h4 class="font-label-md text-primary mb-2">Ngôn ngữ</h4>
+<p class="text-on-surface-variant text-sm">Tiếng Anh (chủ yếu)</p>
+<p class="text-on-surface-variant text-sm">Tiếng Việt</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section II: Quá trình tìm kiếm -->
+<section class="mb-section-gap">
+<div class="flex items-center gap-4 mb-stack-lg">
+<div class="w-12 h-12 bg-primary flex items-center justify-center text-white font-bold text-xl rounded-lg">II</div>
+<h2 class="font-headline-md text-headline-md text-primary">Quá trình tìm kiếm thông tin từ các nguồn</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<div class="bg-white p-6 rounded-xl border border-outline-variant hover:shadow-md transition-shadow">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary">library_books</span>
+<h3 class="font-headline-sm text-headline-sm">Cơ sở dữ liệu học thuật</h3>
+</div>
+<p class="text-on-surface-variant text-sm mb-4">Tìm kiếm tại thư viện số UET, IEEE Xplore, và ScienceDirect để lấy các bài báo có chỉ số uy tín cao.</p>
+</div>
+<div class="bg-white p-6 rounded-xl border border-outline-variant hover:shadow-md transition-shadow">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary">article</span>
+<h3 class="font-headline-sm text-headline-sm">Tạp chí / Kỷ yếu hội nghị</h3>
+</div>
+<p class="text-on-surface-variant text-sm mb-4">Theo dõi các bài đăng từ CVPR, ICCV và các tạp chí chuyên ngành về AI/Robotics.</p>
+</div>
+<div class="bg-white p-6 rounded-xl border border-outline-variant hover:shadow-md transition-shadow">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary">menu_book</span>
+<h3 class="font-headline-sm text-headline-sm">Sách chuyên khảo</h3>
+</div>
+<p class="text-on-surface-variant text-sm mb-4">Tra cứu các chương về Template Matching và CNN trong sách giáo trình của OpenCV và MIT Press.</p>
+</div>
+<div class="bg-white p-6 rounded-xl border border-outline-variant hover:shadow-md transition-shadow">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary">language</span>
+<h3 class="font-headline-sm text-headline-sm">Các nguồn mở Internet</h3>
+</div>
+<p class="text-on-surface-variant text-sm mb-4">Sử dụng Google Scholar, ResearchGate để tìm bản pre-print và các bài blog kỹ thuật uy tín (Towards Data Science).</p>
+</div>
+<div class="bg-white p-6 rounded-xl border border-outline-variant hover:shadow-md transition-shadow">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary">history_edu</span>
+<h3 class="font-headline-sm text-headline-sm">Nguồn mở rộng 1: arXiv</h3>
+</div>
+<p class="text-on-surface-variant text-sm mb-4">Cập nhật các thuật toán YOLO và CNN mới nhất chưa qua bình duyệt chính thức nhưng có tầm ảnh hưởng lớn.</p>
+</div>
+<div class="bg-white p-6 rounded-xl border border-outline-variant hover:shadow-md transition-shadow">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary">terminal</span>
+<h3 class="font-headline-sm text-headline-sm">Nguồn mở rộng 2: GitHub</h3>
+</div>
+<p class="text-on-surface-variant text-sm mb-4">Kiểm tra mã nguồn thực tế và benchmark hiệu năng của các phương pháp được đề xuất trong bài báo.</p>
+</div>
+</div>
+</section>
+<!-- Section III: Bảng đánh giá -->
+<section class="mb-section-gap">
+<div class="flex items-center gap-4 mb-stack-lg">
+<div class="w-12 h-12 bg-primary flex items-center justify-center text-white font-bold text-xl rounded-lg">III</div>
+<h2 class="font-headline-md text-headline-md text-primary">Bảng đánh giá và phân tích độ tin cậy</h2>
+</div>
+<div class="bg-white rounded-xl border border-outline-variant overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-primary text-white">
+<th class="p-4 font-label-md text-center">STT</th>
+<th class="p-4 font-label-md">Phân loại</th>
+<th class="p-4 font-label-md">Tên tài liệu / Nguồn</th>
+<th class="p-4 font-label-md text-center">Đánh giá (TG, CQ, PP, TD, CN)</th>
+<th class="p-4 font-label-md">Xếp hạng</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-4 text-center font-bold">1</td>
+<td class="p-4 text-xs font-bold uppercase text-primary">Journal (Q1)</td>
+<td class="p-4 text-sm font-semibold">"Deep Learning" - MIT Press (Goodfellow et al.)</td>
+<td class="p-4 text-center text-xs tracking-widest font-mono">5/5/5/5/5</td>
+<td class="p-4"><span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-bold">Cao</span></td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-4 text-center font-bold">2</td>
+<td class="p-4 text-xs font-bold uppercase text-primary">Conference</td>
+<td class="p-4 text-sm font-semibold">"Deep Residual Learning for Image Recognition" - CVPR</td>
+<td class="p-4 text-center text-xs tracking-widest font-mono">5/5/5/5/5</td>
+<td class="p-4"><span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-bold">Cao</span></td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-4 text-center font-bold">3</td>
+<td class="p-4 text-xs font-bold uppercase text-primary">Book</td>
+<td class="p-4 text-sm font-semibold">"Learning OpenCV 4" - O'Reilly</td>
+<td class="p-4 text-center text-xs tracking-widest font-mono">5/5/4/5/4</td>
+<td class="p-4"><span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-bold">Cao</span></td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-4 text-center font-bold">4</td>
+<td class="p-4 text-xs font-bold uppercase text-primary">Conference</td>
+<td class="p-4 text-sm font-semibold">"YOLOv3: An Incremental Improvement" - arXiv/CVPR</td>
+<td class="p-4 text-center text-xs tracking-widest font-mono">4/4/5/5/5</td>
+<td class="p-4"><span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-bold">Cao</span></td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-4 text-center font-bold">5</td>
+<td class="p-4 text-xs font-bold uppercase text-primary">Journal</td>
+<td class="p-4 text-sm font-semibold">"A Review of Object Detection Models" - IEEE Access</td>
+<td class="p-4 text-center text-xs tracking-widest font-mono">5/4/5/4/5</td>
+<td class="p-4"><span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-bold">Cao</span></td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-4 text-center font-bold">6</td>
+<td class="p-4 text-xs font-bold uppercase text-primary">ArXiv</td>
+<td class="p-4 text-sm font-semibold">"YOLOv10: Real-Time End-to-End Object Detection"</td>
+<td class="p-4 text-center text-xs tracking-widest font-mono">4/3/5/5/5</td>
+<td class="p-4"><span class="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-xs font-bold">Khá</span></td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-4 text-center font-bold">7</td>
+<td class="p-4 text-xs font-bold uppercase text-primary">Open Source</td>
+<td class="p-4 text-sm font-semibold">OpenCV Documentation - Template Matching Guide</td>
+<td class="p-4 text-center text-xs tracking-widest font-mono">5/5/4/4/5</td>
+<td class="p-4"><span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-bold">Cao</span></td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-4 text-center font-bold">8</td>
+<td class="p-4 text-xs font-bold uppercase text-primary">GitHub</td>
+<td class="p-4 text-sm font-semibold">Ultralytics YOLOv8 Repository</td>
+<td class="p-4 text-center text-xs tracking-widest font-mono">4/4/5/5/5</td>
+<td class="p-4"><span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-bold">Cao</span></td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-4 text-center font-bold">9</td>
+<td class="p-4 text-xs font-bold uppercase text-primary">Blog (Expert)</td>
+<td class="p-4 text-sm font-semibold">PyImageSearch - "Template Matching with OpenCV"</td>
+<td class="p-4 text-center text-xs tracking-widest font-mono">4/4/4/5/4</td>
+<td class="p-4"><span class="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-xs font-bold">Khá</span></td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-4 text-center font-bold">10</td>
+<td class="p-4 text-xs font-bold uppercase text-primary">Conference</td>
+<td class="p-4 text-sm font-semibold">"Rich feature hierarchies for object detection" - CVPR</td>
+<td class="p-4 text-center text-xs tracking-widest font-mono">5/5/5/4/3</td>
+<td class="p-4"><span class="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-xs font-bold">Khá</span></td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-4 text-center font-bold">11</td>
+<td class="p-4 text-xs font-bold uppercase text-primary">Technical Report</td>
+<td class="p-4 text-sm font-semibold">"EfficientNet: Rethinking Model Scaling" - ICML</td>
+<td class="p-4 text-center text-xs tracking-widest font-mono">5/5/5/5/5</td>
+<td class="p-4"><span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-bold">Cao</span></td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-4 text-center font-bold">12</td>
+<td class="p-4 text-xs font-bold uppercase text-primary">Website</td>
+<td class="p-4 text-sm font-semibold">Towards Data Science - "Object Detection 101"</td>
+<td class="p-4 text-center text-xs tracking-widest font-mono">3/2/4/5/5</td>
+<td class="p-4"><span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-bold">Trung bình</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="mt-stack-lg grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="p-6 bg-primary-container rounded-xl text-on-primary-container">
+<h4 class="font-headline-sm text-headline-sm mb-3">Phân tích Ưu điểm</h4>
+<ul class="space-y-2 text-sm">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-sm mt-1">check_circle</span> <b>IEEE/Springer/MIT Press:</b> Độ tin cậy tuyệt đối nhờ quy trình phản biện nghiêm ngặt, cung cấp nền tảng lý thuyết vững chắc về toán học và thuật toán.</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-sm mt-1">check_circle</span> <b>arXiv:</b> Cung cấp các nghiên cứu mang tính thời đại, đi đầu trong lĩnh vực AI vốn thay đổi theo từng tháng.</li>
+</ul>
+</div>
+<div class="p-6 bg-surface-container-high rounded-xl">
+<h4 class="font-headline-sm text-headline-sm mb-3">Hạn chế cần lưu ý</h4>
+<ul class="space-y-2 text-sm">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-sm mt-1">warning</span> <b>Internet &amp; Blog:</b> Dễ tiếp cận nhưng cần kiểm chứng mã nguồn vì có thể không tối ưu hoặc chứa lỗi logic.</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-sm mt-1">warning</span> <b>Sách chuyên khảo:</b> Có độ trễ về công nghệ so với các bài báo hội nghị mới nhất (SOTA).</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Section IV: Danh mục tài liệu tham khảo -->
+<section class="mb-section-gap">
+<div class="flex items-center gap-4 mb-stack-lg">
+<div class="w-12 h-12 bg-primary flex items-center justify-center text-white font-bold text-xl rounded-lg">IV</div>
+<h2 class="font-headline-md text-headline-md text-primary">Danh mục tài liệu tham khảo</h2>
+</div>
+<div class="bg-white p-8 rounded-xl border border-outline-variant space-y-4">
+<div class="flex gap-4">
+<span class="text-primary font-bold">[1]</span>
+<p class="text-on-surface-variant text-sm">Bradski, G., &amp; Kaehler, A. (2020). <i>Learning OpenCV 4: Computer Vision with the OpenCV Library</i>. O'Reilly Media.</p>
+</div>
+<div class="flex gap-4">
+<span class="text-primary font-bold">[2]</span>
+<p class="text-on-surface-variant text-sm">Goodfellow, I., Bengio, Y., &amp; Courville, A. (2016). <i>Deep Learning</i>. MIT Press. Available at: http://www.deeplearningbook.org</p>
+</div>
+<div class="flex gap-4">
+<span class="text-primary font-bold">[3]</span>
+<p class="text-on-surface-variant text-sm">He, K., Zhang, X., Ren, S., &amp; Sun, J. (2016). "Deep residual learning for image recognition." <i>Proceedings of the IEEE conference on computer vision and pattern recognition (CVPR)</i>, 770-778.</p>
+</div>
+<div class="flex gap-4">
+<span class="text-primary font-bold">[4]</span>
+<p class="text-on-surface-variant text-sm">Redmon, J., &amp; Farhadi, A. (2018). "YOLOv3: An incremental improvement." <i>arXiv preprint arXiv:1804.02767</i>.</p>
+</div>
+<div class="flex gap-4">
+<span class="text-primary font-bold">[5]</span>
+<p class="text-on-surface-variant text-sm">Ren, S., He, K., Girshick, R., &amp; Sun, J. (2015). "Faster R-CNN: Towards real-time object detection with region proposal networks." <i>Advances in neural information processing systems (NIPS)</i>, 28, 91-99.</p>
+</div>
+<div class="flex gap-4">
+<span class="text-primary font-bold">[6]</span>
+<p class="text-on-surface-variant text-sm">Tan, M., &amp; Le, Q. (2019). "Efficientnet: Rethinking model scaling for convolutional neural networks." <i>International conference on machine learning (ICML)</i>, 6105-6114. PMLR.</p>
+</div>
+<div class="flex gap-4">
+<span class="text-primary font-bold">[7]</span>
+<p class="text-on-surface-variant text-sm">Wang, C. Y., Yeh, I. H., &amp; Liao, H. Y. M. (2024). "YOLOv10: Real-Time End-to-End Object Detection." <i>arXiv preprint arXiv:2405.14458</i>.</p>
+</div>
+<div class="flex gap-4">
+<span class="text-primary font-bold">[8]</span>
+<p class="text-on-surface-variant text-sm">OpenCV Team. (2024). "Template Matching." <i>OpenCV Documentation</i>. [Online]. Available: https://docs.opencv.org/4.x/d4/dc6/tutorial_py_template_matching.html</p>
+</div>
+<div class="flex gap-4">
+<span class="text-primary font-bold">[9]</span>
+<p class="text-on-surface-variant text-sm">Rosebrock, A. (2021). "Multi-scale Template Matching with OpenCV." <i>PyImageSearch</i>. [Online]. Available: https://pyimagesearch.com</p>
+</div>
+<div class="flex gap-4">
+<span class="text-primary font-bold">[10]</span>
+<p class="text-on-surface-variant text-sm">Girshick, R., Donahue, J., Darrell, T., &amp; Malik, J. (2014). "Rich feature hierarchies for accurate object detection and semantic segmentation." <i>CVPR</i>.</p>
+</div>
+<div class="flex gap-4">
+<span class="text-primary font-bold">[11]</span>
+<p class="text-on-surface-variant text-sm">Zhao, Z. Q., Zheng, P., Xu, S. T., &amp; Wu, X. (2019). "Object detection with deep learning: A review." <i>IEEE transactions on neural networks and learning systems</i>, 30(11), 3212-3232.</p>
+</div>
+</div>
+</section>
+<!-- Navigation Actions -->
+<section class="mt-auto pt-8 border-t border-outline-variant flex flex-col sm:flex-row gap-4 justify-between items-center">
+<button onclick="window.location.href='exercise1.html'" class="flex items-center gap-2 text-primary border border-primary px-6 py-2 rounded-lg font-label-md text-label-md hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+Bài 1
+</button>
+<button onclick="window.location.href='exercise3.html'" class="flex items-center gap-2 bg-primary text-on-primary px-8 py-2 rounded-lg font-label-md text-label-md hover:opacity-90 transition-opacity">
+Xem Bài 3
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</section>
+</div>
+</main>
+</div>
+<script>
+        // Micro-interaction for table rows
+        document.querySelectorAll('tbody tr').forEach(row => {
+            row.addEventListener('click', () => {
+                row.classList.toggle('bg-primary-container');
+                row.classList.toggle('text-on-primary-container');
+            });
+        });
+
+        // Sticky Header Effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md');
+                header.classList.add('bg-opacity-95');
+            } else {
+                header.classList.remove('shadow-md');
+                header.classList.remove('bg-opacity-95');
+            }
+        });
+    </script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const sidebar = document.getElementById('mobile-sidebar');
+        if (menuBtn && sidebar) {
+            menuBtn.addEventListener('click', () => {
+                sidebar.classList.toggle('hidden');
+            });
+        }
+    });
+</script>
+</body></html>
+
+
+
+

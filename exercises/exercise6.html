@@ -1,0 +1,353 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bài tập 6: AI có trách nhiệm và đạo đức</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#002112",
+                    "inverse-primary": "#8fd5ad",
+                    "secondary": "#59605e",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-container": "#f6bb3c",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-container": "#5d6462",
+                    "error": "#ba1a1a",
+                    "inverse-surface": "#2b3234",
+                    "primary-fixed-dim": "#8fd5ad",
+                    "outline-variant": "#bfc9c0",
+                    "error-container": "#ffdad6",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-high": "#e2e9ec",
+                    "secondary-fixed-dim": "#c1c8c5",
+                    "tertiary-fixed": "#ffdea4",
+                    "surface-tint": "#246a49",
+                    "surface-container": "#e8eff1",
+                    "surface-dim": "#d4dbdd",
+                    "secondary-fixed": "#dde4e1",
+                    "on-secondary-fixed-variant": "#414846",
+                    "on-background": "#161d1f",
+                    "outline": "#707972",
+                    "on-tertiary-fixed": "#261900",
+                    "surface-container-low": "#eef5f7",
+                    "surface": "#f4fafd",
+                    "on-error-container": "#93000a",
+                    "surface-bright": "#f4fafd",
+                    "on-surface-variant": "#404942",
+                    "on-primary-fixed-variant": "#005233",
+                    "on-primary-container": "#8ed4ab",
+                    "primary": "#00442a",
+                    "background": "#f4fafd",
+                    "on-tertiary-fixed-variant": "#5d4200",
+                    "inverse-on-surface": "#ebf2f4",
+                    "tertiary-container": "#6b4c00",
+                    "on-error": "#ffffff",
+                    "on-surface": "#161d1f",
+                    "primary-container": "#135d3d",
+                    "primary-fixed": "#abf2c8",
+                    "surface-variant": "#dde4e6",
+                    "tertiary": "#4e3700",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#dae1de",
+                    "surface-container-highest": "#dde4e6",
+                    "tertiary-fixed-dim": "#f8bd3e",
+                    "on-secondary-fixed": "#161d1b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-sm": "8px",
+                    "section-gap": "80px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "container-max": "1200px",
+                    "stack-lg": "32px",
+                    "stack-md": "16px"
+            },
+            "fontFamily": {
+                    "body-md": ["Be Vietnam Pro"],
+                    "body-lg": ["Be Vietnam Pro"],
+                    "headline-xl": ["Be Vietnam Pro"],
+                    "headline-sm": ["Be Vietnam Pro"],
+                    "headline-lg-mobile": ["Be Vietnam Pro"],
+                    "headline-md": ["Be Vietnam Pro"],
+                    "headline-lg": ["Be Vietnam Pro"],
+                    "label-md": ["Be Vietnam Pro"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-xl": ["40px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-background border-b border-outline-variant h-16">
+<nav class="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto h-full">
+<div class="font-headline-md text-headline-md font-bold text-primary cursor-pointer" onclick="window.location.href='../index.html'">Digital Portfolio</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="../index.html">Trang chủ</a>
+<a class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary pb-1 transition-colors" href="../exercise_list.html">Bài tập</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="../index.html#about">Giới thiệu</a>
+<button class="bg-primary text-on-primary px-6 py-2 rounded font-label-md text-label-md hover:opacity-90 active:scale-95 transition-all" onclick="window.location.href='../contact.html'">Liên hệ</button>
+</div>
+<!-- Mobile Toggle -->
+<button id="mobile-menu-btn" class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+</header>
+
+<!-- Side Navigation Bar -->
+<aside id="mobile-sidebar" class="fixed left-0 top-16 bottom-0 z-40 bg-surface-container-low h-full w-64 hidden lg:block border-r border-outline-variant overflow-y-auto">
+<div class="p-6 mb-4">
+<h2 class="font-headline-sm text-headline-sm font-bold text-primary">Danh sách bài tập</h2>
+<p class="font-label-md text-label-md text-on-surface-variant">Điều hướng</p>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercise1.html">
+<span class="material-symbols-outlined" data-icon="folder">folder</span> Bài 1: Thao tác cơ bản với tệp tin và thư mục
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercise2.html">
+<span class="material-symbols-outlined" data-icon="search">search</span> Bài 2: Tìm kiếm và đánh giá thông tin học thuật
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercise3.html">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span> Bài 3: Kỹ năng viết Prompt trong học tập
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercise4.html">
+<span class="material-symbols-outlined" data-icon="groups">groups</span> Bài 4: Kỹ năng làm việc nhóm
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercise5.html">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span> Bài 5: Ứng dụng AI tạo sinh trong sáng tạo nội dung số
+</a>
+<a class="bg-primary-container text-on-primary-container rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercise6.html">
+<span class="material-symbols-outlined" data-icon="gavel">gavel</span> Bài 6: Phát triển kỹ năng sử dụng AI có trách nhiệm và đạo đức trong học thuật
+</a>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 lg:ml-64 pt-16 min-h-screen flex flex-col">
+<!-- Content Container -->
+<div class="max-w-[1200px] w-full mx-auto px-margin-mobile md:px-gutter py-stack-lg flex-1 flex flex-col">
+<!-- Header Section -->
+<header class="mb-12">
+    <!-- Breadcrumbs -->
+    <nav class="flex items-center gap-2 mb-8 text-on-surface-variant">
+        <a class="hover:text-primary font-label-md text-label-md transition-colors" href="../index.html">Trang chủ</a>
+        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+        <a class="hover:text-primary font-label-md text-label-md transition-colors" href="../exercise_list.html">Bài tập</a>
+        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+        <span class="text-primary font-bold font-label-md text-label-md">Bài 6</span>
+    </nav>
+    <div class="bg-surface-container-lowest rounded-xl p-8 border border-outline-variant shadow-sm">
+        <div class="border-b-4 border-primary pb-6 mb-6 text-center md:text-left">
+            <h1 class="font-headline-xl text-headline-xl text-primary mb-4 uppercase tracking-tight">Bài 6: Phát triển kỹ năng sử dụng AI có trách nhiệm và đạo đức trong học thuật</h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">Nhận thức về đạo đức, phân tích rủi ro, và các nguyên tắc sử dụng AI có trách nhiệm trong học tập và nghiên cứu.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="space-y-1">
+                <p class="text-on-surface-variant font-label-md uppercase tracking-wider">Họ và tên</p>
+                <p class="font-headline-sm text-headline-sm text-on-surface">Đỗ Hồng Anh</p>
+            </div>
+            <div class="space-y-1">
+                <p class="text-on-surface-variant font-label-md uppercase tracking-wider">Trường/Lớp</p>
+                <p class="font-body-lg text-body-lg text-on-surface">Đại học Công nghệ, ĐHQGHN (UET)</p>
+            </div>
+            <div class="space-y-1">
+                <p class="text-on-surface-variant font-label-md uppercase tracking-wider">Ngành học</p>
+                <p class="font-body-lg text-body-lg text-on-surface">Công nghệ Thông tin</p>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Section I: Nhận thức -->
+<section class="mb-section-gap">
+<h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-3 mb-stack-md">
+<span class="material-symbols-outlined text-primary text-3xl">psychology</span>
+                    I. Nhận thức cá nhân về AI trong học thuật
+                </h2>
+<div class="bg-surface-container-lowest rounded-xl p-stack-lg shadow-sm border border-outline-variant/30">
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-4">
+                        Qua quá trình học tập và trải nghiệm thực tế với các công nghệ như Spring Boot hay triển khai Distributed Lock trên Redis, tôi nhận thức sâu sắc rằng AI là một công cụ hỗ trợ đắc lực chứ không phải là phương tiện thay thế tư duy độc lập. Việc lạm dụng AI không chỉ làm suy giảm năng lực tự học mà còn vi phạm các chuẩn mực đạo đức học thuật.
+                    </p>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        Tôi hiểu rằng mọi sản phẩm học thuật phải là kết tinh từ nỗ lực và tư duy của chính mình. AI có thể giúp tìm kiếm thông tin, gợi ý cấu trúc mã nguồn, hoặc hỗ trợ sửa lỗi cơ bản, nhưng cốt lõi lập luận và nội dung sáng tạo phải xuất phát từ bản thân.
+                    </p>
+</div>
+</section>
+<!-- Section II: Nguyên tắc -->
+<section class="mb-section-gap">
+<h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-3 mb-stack-md">
+<span class="material-symbols-outlined text-primary text-3xl">gavel</span>
+                    II. 6 Nguyên tắc cá nhân về sử dụng AI
+                </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-stack-md">
+<!-- Nguyên tắc 1 -->
+<div class="bg-surface-container hover:bg-surface-container-high transition-colors rounded-xl p-stack-md border border-outline-variant/20 hover:shadow-md">
+<div class="w-12 h-12 bg-primary-container rounded-full flex items-center justify-center mb-4">
+<span class="font-headline-md text-headline-md text-on-primary-container">1</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Minh bạch</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Luôn trích dẫn và khai báo rõ ràng các phần nội dung có sự hỗ trợ của AI.</p>
+</div>
+<!-- Nguyên tắc 2 -->
+<div class="bg-surface-container hover:bg-surface-container-high transition-colors rounded-xl p-stack-md border border-outline-variant/20 hover:shadow-md">
+<div class="w-12 h-12 bg-primary-container rounded-full flex items-center justify-center mb-4">
+<span class="font-headline-md text-headline-md text-on-primary-container">2</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Chủ động</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Sử dụng AI như một cố vấn, không phải người làm thay. Giữ vai trò quyết định cuối cùng.</p>
+</div>
+<!-- Nguyên tắc 3 -->
+<div class="bg-surface-container hover:bg-surface-container-high transition-colors rounded-xl p-stack-md border border-outline-variant/20 hover:shadow-md">
+<div class="w-12 h-12 bg-primary-container rounded-full flex items-center justify-center mb-4">
+<span class="font-headline-md text-headline-md text-on-primary-container">3</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Kiểm chứng</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Mọi thông tin do AI cung cấp đều phải được đối chiếu và xác minh qua các nguồn học thuật uy tín.</p>
+</div>
+<!-- Nguyên tắc 4 -->
+<div class="bg-surface-container hover:bg-surface-container-high transition-colors rounded-xl p-stack-md border border-outline-variant/20 hover:shadow-md">
+<div class="w-12 h-12 bg-primary-container rounded-full flex items-center justify-center mb-4">
+<span class="font-headline-md text-headline-md text-on-primary-container">4</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Bảo mật</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Không nhập các dữ liệu nhạy cảm, thông tin cá nhân hoặc tài liệu nội bộ vào các công cụ AI công cộng.</p>
+</div>
+<!-- Nguyên tắc 5 -->
+<div class="bg-surface-container hover:bg-surface-container-high transition-colors rounded-xl p-stack-md border border-outline-variant/20 hover:shadow-md">
+<div class="w-12 h-12 bg-primary-container rounded-full flex items-center justify-center mb-4">
+<span class="font-headline-md text-headline-md text-on-primary-container">5</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Tôn trọng</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Không sử dụng AI để tạo ra các nội dung vi phạm bản quyền hoặc xúc phạm người khác.</p>
+</div>
+<!-- Nguyên tắc 6 -->
+<div class="bg-surface-container hover:bg-surface-container-high transition-colors rounded-xl p-stack-md border border-outline-variant/20 hover:shadow-md">
+<div class="w-12 h-12 bg-primary-container rounded-full flex items-center justify-center mb-4">
+<span class="font-headline-md text-headline-md text-on-primary-container">6</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Học hỏi</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Liên tục cập nhật kiến thức về cách thức hoạt động và những giới hạn của AI để sử dụng một cách thông minh.</p>
+</div>
+</div>
+</section>
+<!-- Section III & IV Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-stack-lg mb-section-gap">
+<!-- Section III: Rủi ro -->
+<section>
+<h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-3 mb-stack-md">
+<span class="material-symbols-outlined text-primary text-3xl">warning</span>
+                        III. Phân tích rủi ro
+                    </h2>
+<div class="bg-error-container/20 rounded-xl p-stack-md border border-error/20">
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-error mt-1">error</span>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">Ảo giác AI (Hallucinations)</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">AI có thể bịa đặt số liệu hoặc trích dẫn không có thật. Việc không kiểm chứng sẽ dẫn đến sai lệch nghiêm trọng trong nghiên cứu.</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-error mt-1">error</span>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">Đạo văn vô ý</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Sử dụng nguyên văn câu trả lời của AI mà không diễn đạt lại hoặc trích dẫn có thể bị các phần mềm kiểm tra đạo văn phát hiện.</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-error mt-1">error</span>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">Phụ thuộc công nghệ</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Sự lười biếng trong tư duy sẽ làm thui chột khả năng phân tích và tổng hợp thông tin độc lập.</p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+<!-- Section IV: Khắc phục -->
+<section>
+<h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-3 mb-stack-md">
+<span class="material-symbols-outlined text-primary text-3xl">build</span>
+                        IV. Biện pháp khắc phục
+                    </h2>
+<div class="bg-surface-container-low rounded-xl p-stack-md border border-outline-variant/30 h-full">
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<p class="font-body-md text-body-md text-on-surface-variant"><strong class="text-on-surface">Kiểm tra chéo:</strong> Luôn tìm kiếm nguồn gốc (primary sources) của các thông tin do AI cung cấp.</p>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<p class="font-body-md text-body-md text-on-surface-variant"><strong class="text-on-surface">Kỹ thuật đặt câu lệnh (Prompt Engineering):</strong> Học cách đặt câu hỏi tinh tế để AI đóng vai trò phản biện thay vì cung cấp câu trả lời trực tiếp.</p>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<p class="font-body-md text-body-md text-on-surface-variant"><strong class="text-on-surface">Tự đánh giá:</strong> Thường xuyên kiểm tra lại kiến thức cốt lõi mà không cần sự trợ giúp của AI.</p>
+</li>
+</ul>
+</div>
+</section>
+</div>
+<!-- Section V: Infographic -->
+<section class="mb-section-gap">
+<h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-3 mb-stack-md">
+<span class="material-symbols-outlined text-primary text-3xl">insert_chart</span>
+                    V. Infographic minh họa
+                </h2>
+<div class="bg-surface-container-lowest rounded-xl p-4 md:p-8 shadow-sm border border-outline-variant/30">
+<img alt="Infographic minh họa các nguyên tắc sử dụng AI có trách nhiệm" class="max-w-full h-auto rounded-lg shadow-md object-contain w-full" src="../assets/images/6.1.png"/>
+</div>
+</section>
+<!-- Navigation Actions -->
+<section class="mt-auto pt-8 border-t border-outline-variant flex flex-col sm:flex-row gap-4 justify-between items-center">
+<button onclick="window.location.href='exercise5.html'" class="flex items-center gap-2 text-primary border border-primary px-6 py-2 rounded-lg font-label-md text-label-md hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+Bài 5
+</button>
+<button onclick="window.location.href='../exercise_list.html'" class="flex items-center gap-2 bg-primary text-on-primary px-8 py-2 rounded-lg font-label-md text-label-md hover:opacity-90 transition-opacity">
+Quay lại danh sách
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</section>
+</div>
+</main>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const sidebar = document.getElementById('mobile-sidebar');
+        if (menuBtn && sidebar) {
+            menuBtn.addEventListener('click', () => {
+                sidebar.classList.toggle('hidden');
+            });
+        }
+    });
+</script>
+</body></html>
+
+
+
+
+

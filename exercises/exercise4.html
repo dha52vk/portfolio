@@ -1,0 +1,431 @@
+﻿<!DOCTYPE html>
+
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bài tập 4: Kỹ năng làm việc nhóm - Đỗ Hồng Anh</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#abf2c8",
+                        "on-tertiary-fixed": "#261900",
+                        "surface-container-high": "#e2e9ec",
+                        "on-surface-variant": "#404942",
+                        "on-background": "#161d1f",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#2b3234",
+                        "primary": "#00442a",
+                        "on-tertiary-fixed-variant": "#5d4200",
+                        "outline": "#707972",
+                        "background": "#f4fafd",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed": "#161d1b",
+                        "on-primary-fixed-variant": "#005233",
+                        "inverse-primary": "#8fd5ad",
+                        "surface": "#f4fafd",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#414846",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#6b4c00",
+                        "on-surface": "#161d1f",
+                        "secondary-fixed-dim": "#c1c8c5",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#eef5f7",
+                        "tertiary-fixed": "#ffdea4",
+                        "surface-dim": "#d4dbdd",
+                        "secondary-container": "#dae1de",
+                        "tertiary": "#4e3700",
+                        "surface-variant": "#dde4e6",
+                        "inverse-on-surface": "#ebf2f4",
+                        "secondary": "#59605e",
+                        "outline-variant": "#bfc9c0",
+                        "on-secondary-container": "#5d6462",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#246a49",
+                        "surface-bright": "#f4fafd",
+                        "primary-fixed-dim": "#8fd5ad",
+                        "on-tertiary-container": "#f6bb3c",
+                        "primary-container": "#135d3d",
+                        "surface-container-highest": "#dde4e6",
+                        "secondary-fixed": "#dde4e1",
+                        "surface-container": "#e8eff1",
+                        "on-primary-container": "#8ed4ab",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#002112",
+                        "tertiary-fixed-dim": "#f8bd3e",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "stack-lg": "32px",
+                        "container-max": "1200px",
+                        "stack-sm": "8px",
+                        "stack-md": "16px",
+                        "section-gap": "80px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Be Vietnam Pro"],
+                        "body-lg": ["Be Vietnam Pro"],
+                        "headline-xl": ["Be Vietnam Pro"],
+                        "headline-sm": ["Be Vietnam Pro"],
+                        "headline-lg": ["Be Vietnam Pro"],
+                        "body-md": ["Be Vietnam Pro"],
+                        "headline-lg-mobile": ["Be Vietnam Pro"],
+                        "label-md": ["Be Vietnam Pro"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-xl": ["40px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Be Vietnam Pro', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface flex flex-col min-h-screen overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-background border-b border-outline-variant h-16">
+<nav class="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto h-full">
+<div class="font-headline-md text-headline-md font-bold text-primary cursor-pointer" onclick="window.location.href='../index.html'">Digital Portfolio</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="../index.html">Trang chủ</a>
+<a class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary pb-1 transition-colors" href="../exercise_list.html">Bài tập</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="../index.html#about">Giới thiệu</a>
+<button class="bg-primary text-on-primary px-6 py-2 rounded font-label-md text-label-md hover:opacity-90 active:scale-95 transition-all" onclick="window.location.href='../contact.html'">Liên hệ</button>
+</div>
+<!-- Mobile Toggle -->
+<button id="mobile-menu-btn" class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+</header>
+
+<!-- Side Navigation Bar -->
+<aside id="mobile-sidebar" class="fixed left-0 top-16 bottom-0 z-40 bg-surface-container-low h-full w-64 hidden lg:block border-r border-outline-variant overflow-y-auto">
+<div class="p-6 mb-4">
+<h2 class="font-headline-sm text-headline-sm font-bold text-primary">Danh sách bài tập</h2>
+<p class="font-label-md text-label-md text-on-surface-variant">Điều hướng</p>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercise1.html">
+<span class="material-symbols-outlined" data-icon="folder">folder</span> Bài 1: Thao tác cơ bản với tệp tin và thư mục
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercise2.html">
+<span class="material-symbols-outlined" data-icon="search">search</span> Bài 2: Tìm kiếm và đánh giá thông tin học thuật
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercise3.html">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span> Bài 3: Kỹ năng viết Prompt trong học tập
+</a>
+<a class="bg-primary-container text-on-primary-container rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercise4.html">
+<span class="material-symbols-outlined" data-icon="groups">groups</span> Bài 4: Kỹ năng làm việc nhóm
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercise5.html">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span> Bài 5: Ứng dụng AI tạo sinh trong sáng tạo nội dung số
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercise6.html">
+<span class="material-symbols-outlined" data-icon="gavel">gavel</span> Bài 6: Phát triển kỹ năng sử dụng AI có trách nhiệm và đạo đức trong học thuật
+</a>
+</nav>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 lg:ml-64 pt-16 min-h-screen flex flex-col">
+<div class="max-w-[1200px] w-full mx-auto px-margin-mobile md:px-gutter py-stack-lg flex-1 flex flex-col min-w-0">
+<!-- Header Section -->
+<header class="mb-12">
+    <!-- Breadcrumbs -->
+    <nav class="flex items-center gap-2 mb-8 text-on-surface-variant">
+        <a class="hover:text-primary font-label-md text-label-md transition-colors" href="../index.html">Trang chủ</a>
+        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+        <a class="hover:text-primary font-label-md text-label-md transition-colors" href="../exercise_list.html">Bài tập</a>
+        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+        <span class="text-primary font-bold font-label-md text-label-md">Bài 4</span>
+    </nav>
+    <div class="bg-surface-container-lowest rounded-xl p-8 border border-outline-variant shadow-sm">
+        <div class="border-b-4 border-primary pb-6 mb-6 text-center md:text-left">
+            <h1 class="font-headline-xl text-headline-xl text-primary mb-4 uppercase tracking-tight">Bài 4: Kỹ năng làm việc nhóm</h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">Làm quen với các công cụ hợp tác trực tuyến, cách quản lý công việc và tương tác nhóm hiệu quả qua nền tảng kỹ thuật số.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="space-y-1">
+                <p class="text-on-surface-variant font-label-md uppercase tracking-wider">Họ và tên</p>
+                <p class="font-headline-sm text-headline-sm text-on-surface">Đỗ Hồng Anh</p>
+            </div>
+            <div class="space-y-1">
+                <p class="text-on-surface-variant font-label-md uppercase tracking-wider">Trường/Lớp</p>
+                <p class="font-body-lg text-body-lg text-on-surface">Đại học Công nghệ, ĐHQGHN (UET)</p>
+            </div>
+            <div class="space-y-1">
+                <p class="text-on-surface-variant font-label-md uppercase tracking-wider">Ngành học</p>
+                <p class="font-body-lg text-body-lg text-on-surface">Công nghệ Thông tin</p>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Mục I: Bối cảnh dự án -->
+<section class="mb-section-gap">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-stack-lg border-b border-outline-variant pb-2">I. Bối cảnh dự án</h2>
+<div class="bg-surface-container rounded-xl p-stack-lg border border-outline-variant/50">
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-4">Trong dự án <strong>AuctionHub</strong>, vai trò của em tập trung vào việc thiết lập và phát triển <strong>Backend logic</strong> cũng như tổ chức <strong>Workspace setup</strong> cho toàn bộ đội ngũ. Việc lựa chọn và tối ưu các công cụ hợp tác là yếu tố then chốt để đảm bảo luồng công việc diễn ra trơn tru giữa các thành viên có lịch trình làm việc khác nhau.</p>
+</div>
+</section>
+<!-- Mục II: Tối ưu hóa công cụ -->
+<section class="mb-section-gap">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-stack-lg border-b border-outline-variant pb-2">II. Tối ưu hóa công cụ</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-stack-md">
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant hover:shadow-sm transition-shadow">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded bg-[#0052CC] flex items-center justify-center text-white"><span class="material-symbols-outlined">view_kanban</span></div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Trello</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Quản lý tiến độ và phân công công việc. Tích hợp Webhook thông báo sang Discord.</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant hover:shadow-sm transition-shadow">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded bg-[#5865F2] flex items-center justify-center text-white"><span class="material-symbols-outlined">forum</span></div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Discord</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Kênh trao đổi chính, phân loại theo thread kỹ thuật và nhận thông báo tự động.</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant hover:shadow-sm transition-shadow">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded bg-[#0F9D58] flex items-center justify-center text-white"><span class="material-symbols-outlined">description</span></div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Google Docs</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Soạn thảo tài liệu đặc tả và biên bản họp với chế độ Suggesting Mode.</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant hover:shadow-sm transition-shadow md:col-span-3">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded bg-[#FBBC04] flex items-center justify-center text-white"><span class="material-symbols-outlined">folder</span></div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Google Drive</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Lưu trữ tài nguyên dự án tập trung, phân loại theo cấu trúc cây thư mục khoa học.</p>
+</div>
+</div>
+<!-- Webhook Highlight -->
+<div class="mt-stack-md bg-primary-container/20 p-stack-md rounded-xl border border-primary/30 flex flex-col md:flex-row items-center gap-stack-md">
+<div class="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-full bg-primary text-on-primary">
+<span class="material-symbols-outlined" data-icon="webhook">webhook</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-primary mb-1">Tích hợp Webhook: Trello &amp; Discord</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Để giảm thiểu tình trạng trôi thông tin, em đã thiết lập Webhook kết nối Trello và Discord. Mọi thay đổi trạng thái thẻ (Card moved, Deadline updated) trên Trello sẽ tự động thông báo vào channel #alerts trên Discord theo thời gian thực.</p>
+</div>
+</div>
+</section>
+<!-- Mục III: Quản lý tác vụ -->
+<section class="mb-section-gap">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-stack-lg border-b border-outline-variant pb-2">III. Quản lý tác vụ</h2>
+<div class="overflow-x-auto pb-4 w-[calc(100vw-32px)] md:w-full">
+<div class="flex gap-4 min-w-[800px]">
+<!-- Column: To Do -->
+<div class="flex-1 bg-surface-container rounded-xl p-4 flex flex-col gap-3">
+<div class="flex justify-between items-center mb-2">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">To Do</h3>
+<span class="bg-surface-variant text-on-surface-variant px-2 py-0.5 rounded text-xs">2</span>
+</div>
+<div class="bg-surface-lowest p-3 rounded-lg border border-outline-variant shadow-sm hover:border-primary transition-colors cursor-pointer">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs font-semibold px-2 py-1 rounded bg-[#ffdea4] text-[#5d4200]">Backend</span>
+<span class="material-symbols-outlined text-outline-variant text-sm" data-icon="edit">edit</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mb-3">Setup JWT Authentication</p>
+<div class="flex justify-between items-center text-xs text-on-surface-variant">
+<div class="flex items-center gap-1 text-error">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span>
+<span class="">Oct 25</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="checklist">checklist</span>
+<span class="">0/3</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Column: In Progress -->
+<div class="flex-1 bg-surface-container rounded-xl p-4 flex flex-col gap-3">
+<div class="flex justify-between items-center mb-2">
+<h3 class="font-label-md text-label-md text-primary uppercase tracking-wider">In Progress</h3>
+<span class="bg-primary/20 text-primary px-2 py-0.5 rounded text-xs">1</span>
+</div>
+<div class="bg-surface-lowest p-3 rounded-lg border border-primary shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs font-semibold px-2 py-1 rounded bg-[#dae1de] text-[#161d1b]">Database</span>
+<span class="material-symbols-outlined text-primary text-sm" data-icon="more_horiz">more_horiz</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mb-3">Design Auction Schema</p>
+<div class="flex justify-between items-center text-xs text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span>
+<span class="">Oct 28</span>
+</div>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[14px]" data-icon="checklist">checklist</span>
+<span class="">2/4</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Column: Done -->
+<div class="flex-1 bg-surface-container rounded-xl p-4 flex flex-col gap-3 opacity-80">
+<div class="flex justify-between items-center mb-2">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Done</h3>
+<span class="bg-surface-variant text-on-surface-variant px-2 py-0.5 rounded text-xs">1</span>
+</div>
+<div class="bg-surface-lowest p-3 rounded-lg border border-outline-variant shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs font-semibold px-2 py-1 rounded bg-[#dae1de] text-[#161d1b]">Setup</span>
+<span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span>
+</div>
+<p class="font-body-md text-body-md text-outline line-through mb-3">Initialize Git Repository &amp; Structure</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-stack-md p-stack-md bg-surface-container-low rounded-xl border border-outline-variant">
+<h4 class="font-label-md text-label-md text-primary uppercase tracking-wider mb-2">Tổng kết tương tác</h4>
+<ul class="list-disc ml-5 font-body-md text-body-md text-on-surface-variant">
+<li>100% thẻ công việc có đầy đủ Description, Checklist và Deadline.</li>
+<li>Tương tác trao đổi kỹ thuật trên Discord &gt; 15 lần/tuần.</li>
+<li>Sử dụng triệt để Comments và Suggesting trên Google Docs để phản biện.</li>
+</ul>
+<div class="mt-4 pt-4 border-t border-outline-variant/30">
+<p class="font-label-md text-label-md text-on-surface-variant"><strong>Chi tiết thẻ Trello:</strong> Bao gồm Description chi tiết, Checklist công việc cụ thể và Deadline được cập nhật theo tiến độ thực tế.</p>
+</div>
+</div>
+</section>
+<!-- Mục IV: Quản lý tài nguyên -->
+<section class="mb-section-gap">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-stack-lg border-b border-outline-variant pb-2">IV. Quản lý tài nguyên</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant">
+<h3 class="font-label-md text-label-md text-primary uppercase mb-4">Cấu trúc thư mục</h3>
+<div class="font-body-md text-body-md text-on-surface-variant font-mono bg-surface-container p-4 rounded leading-relaxed">
+<div>AuctionHub_Project</div>
+<div class="pl-4">└── Tuan_1_Setup_API</div>
+<div class="pl-8">├── Database_Scripts</div>
+<div class="pl-8">└── API_Documentation</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant">
+<h3 class="font-label-md text-label-md text-primary uppercase mb-4">Quy tắc đặt tên</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-2">Cấu trúc: <strong>[Tiền_tố]_[Tên_nội_dung]_[Tác_giả]_[Phiên_bản]</strong></p>
+<p class="font-body-md text-body-md text-on-surface-variant italic">Ví dụ: DOC_SRS_AnhDH_v1.2</p>
+</div>
+</div>
+</section>
+<!-- Mục V: Thách thức & Giải pháp -->
+<section class="mb-section-gap">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-stack-lg border-b border-outline-variant pb-2">V. Thách thức &amp; Giải pháp</h2>
+<div class="flex flex-col gap-stack-md">
+<div class="flex flex-col md:flex-row gap-4 bg-surface-container-low p-6 rounded-xl border border-outline-variant">
+<div class="md:w-1/3 border-b md:border-b-0 md:border-r border-outline-variant pb-4 md:pb-0 md:pr-4">
+<div class="flex items-center gap-2 mb-2 text-error">
+<span class="material-symbols-outlined" data-icon="event_busy">event_busy</span>
+<h3 class="font-headline-sm text-headline-sm">Xung đột lịch trình</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Các thành viên có giờ làm việc khác nhau, khó tổ chức họp đồng bộ thường xuyên.</p>
+</div>
+<div class="md:w-2/3 md:pl-4">
+<div class="flex items-center gap-2 mb-2 text-primary">
+<span class="material-symbols-outlined" data-icon="lightbulb">lightbulb</span>
+<h3 class="font-headline-sm text-headline-sm">Giải pháp: Asynchronous communication</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Chuyển sang giao tiếp bất đồng bộ trên Discord. Các quyết định quan trọng được thảo luận trong thread riêng biệt, cho phép thành viên đọc và phản hồi khi họ online mà không làm trôi tin nhắn chung.</p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row gap-4 bg-surface-container-low p-6 rounded-xl border border-outline-variant">
+<div class="md:w-1/3 border-b md:border-b-0 md:border-r border-outline-variant pb-4 md:pb-0 md:pr-4">
+<div class="flex items-center gap-2 mb-2 text-error">
+<span class="material-symbols-outlined" data-icon="chat_error">chat_error</span>
+<h3 class="font-headline-sm text-headline-sm">Trôi thông tin</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Các thông báo quan trọng bị lẫn trong các cuộc thảo luận kỹ thuật hàng ngày.</p>
+</div>
+<div class="md:w-2/3 md:pl-4">
+<div class="flex items-center gap-2 mb-2 text-primary">
+<span class="material-symbols-outlined" data-icon="push_pin">push_pin</span>
+<h3 class="font-headline-sm text-headline-sm">Giải pháp: Pin Message &amp; Alerts Channel</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Quy định nghiêm ngặt về việc Pin các tin nhắn chứa link tài liệu, chốt thiết kế. Tạo channel #alerts riêng biệt (read-only cho members) chỉ dành cho bot và leader thông báo.</p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row gap-4 bg-surface-container-low p-6 rounded-xl border border-outline-variant">
+<div class="md:w-1/3 border-b md:border-b-0 md:border-r border-outline-variant pb-4 md:pb-0 md:pr-4">
+<div class="flex items-center gap-2 mb-2 text-error">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+<h3 class="font-headline-sm text-headline-sm">Ghi đè dữ liệu</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Nhiều người cùng sửa một file dẫn đến mất mát nội dung.</p>
+</div>
+<div class="md:w-2/3 md:pl-4">
+<div class="flex items-center gap-2 mb-2 text-primary">
+<span class="material-symbols-outlined" data-icon="verified">verified</span>
+<h3 class="font-headline-sm text-headline-sm">Giải pháp: Suggesting Mode</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Bắt buộc sử dụng chế độ đề xuất thay vì sửa trực tiếp, giúp kiểm soát mọi thay đổi trước khi merge.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Mục VI: Kết luận -->
+<section class="mb-section-gap">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-stack-lg border-b border-outline-variant pb-2">VI. Kết luận</h2>
+<div class="bg-primary-container/10 p-6 rounded-xl border border-primary/20">
+<p class="font-body-lg text-body-lg text-on-surface-variant">Việc xây dựng hệ sinh thái <strong>Trello-Discord-Google Workspace</strong> đã giúp tối ưu hóa 100% hiệu suất làm việc nhóm, đảm bảo tính minh bạch và khả năng truy xuất dữ liệu nhanh chóng trong dự án AuctionHub.</p>
+</div>
+</section>
+<!-- Navigation Actions -->
+<section class="mt-auto pt-8 border-t border-outline-variant flex flex-col sm:flex-row gap-4 justify-between items-center">
+<button onclick="window.location.href='exercise3.html'" class="flex items-center gap-2 text-primary border border-primary px-6 py-2 rounded-lg font-label-md text-label-md hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+Bài 3
+</button>
+<button onclick="window.location.href='exercise5.html'" class="flex items-center gap-2 bg-primary text-on-primary px-8 py-2 rounded-lg font-label-md text-label-md hover:opacity-90 transition-opacity">
+Xem Bài 5
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</section>
+</div>
+</main>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const sidebar = document.getElementById('mobile-sidebar');
+        if (menuBtn && sidebar) {
+            menuBtn.addEventListener('click', () => {
+                sidebar.classList.toggle('hidden');
+            });
+        }
+    });
+</script>
+</body></html>
+
+
+
+
+
+
+

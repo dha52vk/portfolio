@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-
-<html lang="vi"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+﻿<!DOCTYPE html><html lang="vi" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Bài 1: Thao tác cơ bản với tệp tin và thư mục - Digital Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
       tailwind.config = {
@@ -126,72 +123,83 @@
         }
     </style>
 </head>
-<body class="bg-background text-on-surface">
-<!-- TopAppBar -->
-<nav class="fixed top-0 left-0 right-0 z-50 bg-background border-b border-outline-variant h-16">
-<div class="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto h-full">
-<div class="font-headline-md text-headline-md font-bold text-primary">Digital Portfolio</div>
-<div class="hidden md:flex gap-8 items-center">
-<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="../index.html">Trang chủ</a>
-<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md" href="../exercise_list.html">Bài tập</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="../index.html#about">Giới thiệu</a>
-<button onclick="window.location.href='../contact.html'" class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md text-label-md scale-95 active:scale-90 transition-transform">Liên hệ</button>
+<body class="bg-background text-on-surface overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-background border-b border-outline-variant h-16">
+<nav class="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto h-full">
+<div class="font-headline-md text-headline-md font-bold text-primary cursor-pointer" onclick="window.location.href='../index.html'">Digital Portfolio</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="../index.html">Trang chủ</a>
+<a class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary pb-1 transition-colors" href="../exercise_list.html">Bài tập</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="../index.html#about">Giới thiệu</a>
+<button class="bg-primary text-on-primary px-6 py-2 rounded font-label-md text-label-md hover:opacity-90 active:scale-95 transition-all" onclick="window.location.href='../contact.html'">Liên hệ</button>
 </div>
-<button class="md:hidden text-primary">
+<!-- Mobile Toggle -->
+<button id="mobile-menu-btn" class="md:hidden text-primary">
 <span class="material-symbols-outlined">menu</span>
 </button>
-</div>
 </nav>
-<!-- SideNavBar (Desktop Only) -->
-<aside class="fixed left-0 top-16 bottom-0 w-64 bg-surface-container-low border-r border-outline-variant hidden lg:block overflow-y-auto py-6">
-<div class="px-6 mb-8">
-<h2 class="font-headline-sm text-headline-sm font-bold text-primary">Exercises</h2>
-<p class="font-label-md text-label-md text-on-surface-variant">Module Navigation</p>
+</header>
+<!-- Side Navigation Bar -->
+<aside id="mobile-sidebar" class="fixed left-0 top-16 bottom-0 z-40 bg-surface-container-low h-full w-64 hidden lg:block border-r border-outline-variant overflow-y-auto">
+<div class="p-6 mb-4">
+<h2 class="font-headline-sm text-headline-sm font-bold text-primary">Danh sách bài tập</h2>
+<p class="font-label-md text-label-md text-on-surface-variant">Điều hướng</p>
 </div>
-<nav class="space-y-1">
-<a class="bg-primary-container text-on-primary-container rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors" href="exercise1.html">
-<span class="material-symbols-outlined">folder</span>
-<span class="font-label-md text-label-md">Bài 1: File Ops</span>
+<nav class="flex flex-col gap-1">
+<a class="bg-primary-container text-on-primary-container rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercise1.html">
+<span class="material-symbols-outlined" data-icon="folder">folder</span> Bài 1: Thao tác cơ bản với tệp tin và thư mục
 </a>
-<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors" href="#">
-<span class="material-symbols-outlined">search</span>
-<span class="font-label-md text-label-md">Bài 2: Research</span>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercise2.html">
+<span class="material-symbols-outlined" data-icon="search">search</span> Bài 2: Tìm kiếm và đánh giá thông tin học thuật
 </a>
-<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors" href="#">
-<span class="material-symbols-outlined">psychology</span>
-<span class="font-label-md text-label-md">Bài 3: Prompting</span>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercise3.html">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span> Bài 3: Kỹ năng viết Prompt trong học tập
 </a>
-<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors" href="#">
-<span class="material-symbols-outlined">groups</span>
-<span class="font-label-md text-label-md">Bài 4: Collaboration</span>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercise4.html">
+<span class="material-symbols-outlined" data-icon="groups">groups</span> Bài 4: Kỹ năng làm việc nhóm
 </a>
-<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors" href="#">
-<span class="material-symbols-outlined">auto_awesome</span>
-<span class="font-label-md text-label-md">Bài 5: Generative AI</span>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercise5.html">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span> Bài 5: Ứng dụng AI tạo sinh trong sáng tạo nội dung số
 </a>
-<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors" href="#">
-<span class="material-symbols-outlined">gavel</span>
-<span class="font-label-md text-label-md">Bài 6: Ethics</span>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-2 flex items-center gap-3 transition-colors font-label-md text-label-md" href="exercise6.html">
+<span class="material-symbols-outlined" data-icon="gavel">gavel</span> Bài 6: Phát triển kỹ năng sử dụng AI có trách nhiệm và đạo đức trong học thuật
 </a>
 </nav>
 </aside>
 <!-- Main Content Canvas -->
-<main class="lg:ml-64 pt-16 min-h-screen">
-<div class="max-w-4xl mx-auto px-margin-mobile md:px-gutter py-10">
-<!-- Breadcrumbs -->
-<nav class="flex items-center gap-2 mb-8 text-on-surface-variant">
-<a class="hover:text-primary font-label-md text-label-md" href="../index.html">Home</a>
-<span class="material-symbols-outlined text-[16px]">chevron_right</span>
-<a class="hover:text-primary font-label-md text-label-md" href="../exercise_list.html">Exercises</a>
-<span class="material-symbols-outlined text-[16px]">chevron_right</span>
-<span class="text-primary font-bold font-label-md text-label-md">Bài 1</span>
-</nav>
+<main class="flex-1 lg:ml-64 pt-16 min-h-screen flex flex-col">
+<div class="max-w-[1200px] w-full mx-auto px-margin-mobile md:px-gutter py-stack-lg flex-1 flex flex-col">
 <!-- Header Section -->
 <header class="mb-12">
-<h1 class="font-headline-xl text-headline-xl text-primary mb-4">Bài 1: Thao tác cơ bản với tệp tin và thư mục</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
-                    Học cách tổ chức không gian làm việc số khoa học thông qua việc thiết lập cấu trúc thư mục tối ưu và quy tắc đặt tên tệp chuyên nghiệp.
-                </p>
+    <!-- Breadcrumbs -->
+    <nav class="flex items-center gap-2 mb-8 text-on-surface-variant">
+        <a class="hover:text-primary font-label-md text-label-md transition-colors" href="../index.html">Trang chủ</a>
+        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+        <a class="hover:text-primary font-label-md text-label-md transition-colors" href="../exercise_list.html">Bài tập</a>
+        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+        <span class="text-primary font-bold font-label-md text-label-md">Bài 1</span>
+    </nav>
+    <div class="bg-surface-container-lowest rounded-xl p-8 border border-outline-variant shadow-sm">
+        <div class="border-b-4 border-primary pb-6 mb-6 text-center md:text-left">
+            <h1 class="font-headline-xl text-headline-xl text-primary mb-4 uppercase tracking-tight">Bài 1: Thao tác cơ bản với tệp tin và thư mục</h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">Học cách tổ chức không gian làm việc số khoa học thông qua việc thiết lập cấu trúc thư mục tối ưu và quy tắc đặt tên tệp chuyên nghiệp.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="space-y-1">
+                <p class="text-on-surface-variant font-label-md uppercase tracking-wider">Họ và tên</p>
+                <p class="font-headline-sm text-headline-sm text-on-surface">Đỗ Hồng Anh</p>
+            </div>
+            <div class="space-y-1">
+                <p class="text-on-surface-variant font-label-md uppercase tracking-wider">Trường/Lớp</p>
+                <p class="font-body-lg text-body-lg text-on-surface">Đại học Công nghệ, ĐHQGHN (UET)</p>
+            </div>
+            <div class="space-y-1">
+                <p class="text-on-surface-variant font-label-md uppercase tracking-wider">Ngành học</p>
+                <p class="font-body-lg text-body-lg text-on-surface">Công nghệ Thông tin</p>
+            </div>
+        </div>
+    </div>
 </header>
 <!-- Grid Content -->
 <div class="space-y-section-gap">
@@ -209,100 +217,176 @@
 <!-- Step 1 -->
 <div class="flex gap-6 step-container relative">
 <div class="relative z-10 step-line">
-<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center font-bold text-primary font-headline-sm">1</div>
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center font-bold text-on-primary font-label-md">1</div>
 </div>
-<div>
-<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Thiết lập cấu trúc thư mục gốc</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-4">Xây dựng hệ thống phân cấp 3 cấp độ: Module &gt; Task &gt; Assets để đảm bảo mọi tệp tin đều có vị trí logic.</p>
-<div class="bg-surface-container rounded-lg p-4 font-mono text-sm text-on-surface-variant border border-outline-variant">
-                                    Digital_Portfolio/ <br/>
-                                    ├── 01_Exercises/ <br/>
-                                    │   └── Bài_01_File_Ops/ <br/>
-                                    │       ├── Screenshots/ <br/>
-                                    │       └── Documentation/ <br/>
-                                    └── 02_Projects/
-                                </div>
+<div class="flex-1">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Mở File Explorer</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Nhấn tổ hợp phím Windows + E hoặc nhấp vào biểu tượng thư mục màu vàng trên thanh tác vụ.</p>
+<div class="max-w-xs border border-outline-variant rounded-lg overflow-hidden bg-surface-container">
+<img alt="Mở File Explorer" class="w-full h-auto" src="../assets/images/1.1.png">
+</div>
 </div>
 </div>
 <!-- Step 2 -->
 <div class="flex gap-6 step-container relative">
 <div class="relative z-10 step-line">
-<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center font-bold text-primary font-headline-sm">2</div>
-</div>
-<div>
-<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Quy tắc đặt tên tệp (Naming Convention)</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-4">Sử dụng định dạng Snake Case kết hợp với Versioning để quản lý sự thay đổi của tài liệu.</p>
-<ul class="space-y-2">
-<li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-primary text-[18px] mt-1">check_circle</span>
-<span class="font-body-md text-body-md">Không sử dụng dấu tiếng Việt và khoảng trắng.</span>
-</li>
-<li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-primary text-[18px] mt-1">check_circle</span>
-<span class="font-body-md text-body-md">Sử dụng tiền tố ngày tháng (YYYYMMDD) cho các bản nháp quan trọng.</span>
-</li>
-</ul>
-</div>
-</div>
-<!-- Step 3 (Showcase) -->
-<div class="flex gap-6 step-container relative">
-<div class="relative z-10">
-<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center font-bold text-primary font-headline-sm">3</div>
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center font-bold text-on-primary font-label-md">2</div>
 </div>
 <div class="flex-1">
-<h3 class="font-headline-sm text-headline-sm text-primary mb-4">Minh họa thực tế</h3>
-<div class="relative rounded-xl overflow-hidden border border-outline-variant group">
-<img alt="File structure screenshot" class="w-full h-auto object-cover aspect-video transition-transform duration-500 group-hover:scale-105" data-alt="A clean and professional computer screen screenshot showing an organized file explorer window. The folder structure follows a clear hierarchy with primary green accents on highlighted folders. The lighting is soft and natural, reflecting a focused academic or corporate workspace environment. The overall aesthetic is minimalist and high-tech, showcasing digital organization skills." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8kFdVzmalzzFYxMY5KY7oY340V2AJSl-hqHhp7i8Q5y8YvK7Bz1eyeOOv8WndIgpWdlZIEr6BfW9bG099DoRluVBPe8i8ZHwHKeePrH8-r7nH__u2BP2sgoeEE2tVQj_uvJsssT9kYrnVlc_sr4WvghoFCbIzyjGoMfHVQifrk5uqB25XWcIgjvkiMhq_naSgFLHZdUErli6HbSXVSPoYkBjeK0fgqQk-1h1MZxbonrhJRfL7lq2bE8KViGixIf40nlQwCsSs9eVF"/>
-<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-<span class="bg-white/90 backdrop-blur px-4 py-2 rounded-full font-label-md text-label-md text-primary shadow-lg">Ảnh minh họa cấu trúc thư mục</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Truy cập ổ đĩa/thư mục</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Ở cột bên trái, nhấp vào This PC, sau đó nhấp đúp vào một ổ đĩa không phải ổ hệ thống (ví dụ: ổ D: hoặc E:). Nếu chỉ có ổ C:, hãy vào thư mục Documents.</p>
+<div class="max-w-[200px] border border-outline-variant rounded-lg overflow-hidden bg-surface-container">
+<img alt="Truy cập ổ đĩa" class="w-full h-auto" src="../assets/images/1.2.png">
 </div>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex gap-6 step-container relative">
+<div class="relative z-10 step-line">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center font-bold text-on-primary font-label-md">3</div>
+</div>
+<div class="flex-1">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Tạo thư mục mới</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Nhấp chuột phải vào một khoảng trống -&gt; chọn New -&gt; Folder. Đặt tên thư mục là ThucHanh_hotensinhvien (ví dụ: ThucHanh_NguyenVanA). Nhấn Enter.</p>
+<div class="max-w-md border border-outline-variant rounded-lg overflow-hidden bg-surface-container">
+<img alt="Tạo thư mục mới" class="w-full h-auto" src="../assets/images/1.3.png">
+</div>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="flex gap-6 step-container relative">
+<div class="relative z-10 step-line">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center font-bold text-on-primary font-label-md">4</div>
+</div>
+<div class="flex-1">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Vào thư mục vừa tạo</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Nhấp đúp vào thư mục ThucHanh_NguyenVanA.</p>
+<div class="max-w-2xl border border-outline-variant rounded-lg overflow-hidden bg-surface-container">
+<img alt="Thư mục ThucHanh_NguyenVanA" class="w-full h-auto" src="../assets/images/1.4.png">
+</div>
+</div>
+</div>
+<!-- Step 5 -->
+<div class="flex gap-6 step-container relative">
+<div class="relative z-10 step-line">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center font-bold text-on-primary font-label-md">5</div>
+</div>
+<div class="flex-1">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Tạo tệp tin văn bản</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Nhấp chuột phải vào khoảng trống -&gt; New -&gt; Text Document. Đặt tên là GhiChu.txt. Nhấn Enter.</p>
+<div class="max-w-xl border border-outline-variant rounded-lg overflow-hidden bg-surface-container">
+<img alt="Tạo tệp tin văn bản" class="w-full h-auto" src="../assets/images/1.5.png">
+</div>
+</div>
+</div>
+<!-- Step 6 -->
+<div class="flex gap-6 step-container relative">
+<div class="relative z-10 step-line">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center font-bold text-on-primary font-label-md">6</div>
+</div>
+<div class="flex-1">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Đổi tên tệp tin</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Nhấp chuột phải vào tệp GhiChu.txt -&gt; chọn Rename. Đổi tên thành GhiChuQuanTrong.txt. Nhấn Enter.</p>
+<div class="max-w-xl border border-outline-variant rounded-lg overflow-hidden bg-surface-container">
+<img alt="Đổi tên tệp tin" class="w-full h-auto" src="../assets/images/1.6.png">
+</div>
+</div>
+</div>
+<!-- Step 7 -->
+<div class="flex gap-6 step-container relative">
+<div class="relative z-10 step-line">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center font-bold text-on-primary font-label-md">7</div>
+</div>
+<div class="flex-1">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Tạo thư mục con</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Trong thư mục ThucHanh_NguyenVanA, nhấp chuột phải -&gt; New -&gt; Folder. Đặt tên là TaiLieu.</p>
+<div class="max-w-xl border border-outline-variant rounded-lg overflow-hidden bg-surface-container">
+<img alt="Tạo thư mục con" class="w-full h-auto" src="../assets/images/1.7.png">
+</div>
+</div>
+</div>
+<!-- Step 8 -->
+<div class="flex gap-6 step-container relative">
+<div class="relative z-10 step-line">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center font-bold text-on-primary font-label-md">8</div>
+</div>
+<div class="flex-1">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Sao chép tệp tin (Copy &amp; Paste)</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Nhấp chuột phải vào tệp GhiChuQuanTrong.txt -&gt; chọn Copy (hoặc chọn tệp rồi nhấn Ctrl + C). Nhấp đúp vào thư mục TaiLieu, nhấp chuột phải vào khoảng trống bên trong -&gt; chọn Paste (hoặc nhấn Ctrl + V). Bây giờ bạn có một bản sao của tệp trong thư mục TaiLieu.</p>
+<div class="max-w-xl border border-outline-variant rounded-lg overflow-hidden bg-surface-container">
+<img alt="Sao chép tệp tin" class="w-full h-auto" src="../assets/images/1.8.png">
+</div>
+</div>
+</div>
+<!-- Step 9 -->
+<div class="flex gap-6 step-container relative">
+<div class="relative z-10 step-line">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center font-bold text-on-primary font-label-md">9</div>
+</div>
+<div class="flex-1">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Di chuyển tệp tin (Cut &amp; Paste)</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Quay lại thư mục ThucHanh_NguyenVanA. Tạo một tệp mới tên là DiChuyen.txt. Nhấp chuột phải vào tệp DiChuyen.txt -&gt; chọn Cut (hoặc chọn tệp rồi nhấn Ctrl + X). Nhấp đúp vào thư mục TaiLieu, nhấp chuột phải vào khoảng trống -&gt; chọn Paste (hoặc nhấn Ctrl + V). Tệp gốc đã biến mất khỏi vị trí cũ và chỉ còn ở vị trí mới.</p>
+<div class="max-w-xl border border-outline-variant rounded-lg overflow-hidden bg-surface-container">
+<img alt="Di chuyển tệp tin" class="w-full h-auto" src="../assets/images/1.9.png">
+</div>
+</div>
+</div>
+<!-- Step 10 -->
+<div class="flex gap-6 step-container relative">
+<div class="relative z-10 step-line">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center font-bold text-on-primary font-label-md">10</div>
+</div>
+<div class="flex-1">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Xóa tệp tin</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Trong thư mục TaiLieu, nhấp chuột phải vào tệp GhiChuQuanTrong.txt -&gt; chọn Delete. Tệp sẽ được chuyển vào Thùng rác (Recycle Bin).</p>
+<div class="max-w-xl border border-outline-variant rounded-lg overflow-hidden bg-surface-container">
+<img alt="Xóa tệp tin" class="w-full h-auto" src="../assets/images/1.10.png">
+</div>
+</div>
+</div>
+<!-- Step 11 -->
+<div class="flex gap-6 step-container relative">
+<div class="relative z-10 step-line">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center font-bold text-on-primary font-label-md">11</div>
+</div>
+<div class="flex-1">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Xóa vĩnh viễn</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Chọn tệp DiChuyen.txt, nhấn giữ phím Shift và nhấn phím Delete. Một cảnh báo sẽ hiện ra. Nếu đồng ý, tệp sẽ bị xóa vĩnh viễn mà không qua Thùng rác.</p>
+<div class="max-w-xl border border-outline-variant rounded-lg overflow-hidden bg-surface-container">
+<img alt="Xóa vĩnh viễn" class="w-full h-auto" src="../assets/images/1.11.png">
+</div>
+</div>
+</div>
+<!-- Step 12 -->
+<div class="flex gap-6 step-container relative">
+<div class="relative z-10">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center font-bold text-on-primary font-label-md">12</div>
+</div>
+<div class="flex-1">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Khôi phục từ Thùng rác (Tùy chọn)</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Tìm biểu tượng Recycle Bin trên màn hình nền, nhấp đúp để mở. Tìm tệp GhiChuQuanTrong.txt đã xóa, nhấp chuột phải vào nó và chọn Restore. Tệp sẽ quay trở lại vị trí ban đầu.</p>
+<div class="max-w-xl border border-outline-variant rounded-lg overflow-hidden bg-surface-container">
+<img alt="Khôi phục từ Thùng rác" class="w-full h-auto" src="../assets/images/1.12.png">
 </div>
 </div>
 </div>
 </div>
 </section>
 <!-- Navigation Actions -->
-<section class="flex flex-col sm:flex-row gap-4 justify-between items-center pt-8 border-t border-outline-variant">
+<section class="mt-auto pt-8 border-t border-outline-variant flex flex-col sm:flex-row gap-4 justify-between items-center">
 <button onclick="window.location.href='../exercise_list.html'" class="flex items-center gap-2 text-primary border border-primary px-6 py-2 rounded-lg font-label-md text-label-md hover:bg-primary/5 transition-colors">
 <span class="material-symbols-outlined">arrow_back</span>
-                        Quay lại danh sách
-                    </button>
-<button class="flex items-center gap-2 bg-primary text-on-primary px-8 py-2 rounded-lg font-label-md text-label-md hover:shadow-lg transition-all scale-100 active:scale-95">
-                        Xem Bài 2
-                        <span class="material-symbols-outlined">arrow_forward</span>
+Quay lại danh sách
+</button>
+<button onclick="window.location.href='exercise2.html'" class="flex items-center gap-2 bg-primary text-on-primary px-8 py-2 rounded-lg font-label-md text-label-md hover:opacity-90 transition-opacity">
+Xem Bài 2
+<span class="material-symbols-outlined">arrow_forward</span>
 </button>
 </section>
 </div>
 </div>
-<!-- Footer -->
-<footer class="w-full py-stack-lg px-margin-mobile md:px-gutter mt-section-gap bg-surface-container-highest border-t border-outline-variant">
-<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-<div class="text-center md:text-left">
-<div class="font-headline-sm text-headline-sm font-bold text-on-background mb-2">Đỗ Hồng Anh</div>
-<p class="font-body-md text-body-md text-on-surface-variant">© 2024 Digital Portfolio. Sinh viên Đại học Công nghệ - Chuyên ngành CNTT.</p>
-</div>
-<div class="flex gap-6">
-<a class="text-on-surface-variant hover:underline decoration-primary font-label-md text-label-md" href="mailto:dha52vk@gmail.com">Email</a>
-<a class="text-on-surface-variant hover:underline decoration-primary font-label-md text-label-md" href="https://github.com/dha52vk" target="_blank">GitHub</a>
-</div>
-</div>
-</footer>
 </main>
-<!-- Mobile Bottom Navigation (Hidden on Desktop) -->
-<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-background border-t border-outline-variant flex justify-around items-center h-16 z-50">
-<a class="flex flex-col items-center text-on-surface-variant" href="../index.html">
-<span class="material-symbols-outlined">home</span>
-<span class="text-[10px] font-label-md">Trang chủ</span>
-</a>
-<a class="flex flex-col items-center text-primary font-bold" href="../exercise_list.html">
-<span class="material-symbols-outlined">description</span>
-<span class="text-[10px] font-label-md">Bài tập</span>
-</a>
-<a class="flex flex-col items-center text-on-surface-variant" href="../index.html#about">
-<span class="material-symbols-outlined">person</span>
-<span class="text-[10px] font-label-md">Giới thiệu</span>
-</a>
-</nav>
+
 <script>
         // Simple scroll interaction for the header
         window.addEventListener('scroll', () => {
@@ -314,4 +398,24 @@
             }
         });
     </script>
+
+
+
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const sidebar = document.getElementById('mobile-sidebar');
+        if (menuBtn && sidebar) {
+            menuBtn.addEventListener('click', () => {
+                sidebar.classList.toggle('hidden');
+            });
+        }
+    });
+</script>
 </body></html>
+
+
+
